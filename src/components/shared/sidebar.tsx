@@ -29,17 +29,18 @@ const Sidebar = () => {
         </SheetDescription>
       </SheetHeader>
       <div className="w-full flex flex-col py-3 px-2">
-        <h3 className="text-md px-2 font-semibold text-neutral-400 underline">
+        <h3 className="text-md px-2 font-semibold text-neutral-800 underline">
           Menu
         </h3>
-        <div className="flex flex-col gap-2 px-2 text-xl p-1 border-b pb-4 text-neutral-800">
-          {NavLists.map((navItem) => (
+        <div className="flex flex-col px-2 text-xl p-1 border-b pb-4 text-neutral-800">
+          {NavLists.map((navItem, index) => (
             <NavLink
               key={navItem.route}
               to={navItem.route}
               className={cn(
-                "transition-colors duration-300",
-                navItem.route === pathname ? "text-black" : "text-neutral-600"
+                "transition-colors duration-300 tracking-tighter border-t py-2",
+                navItem.route === pathname ? "text-black" : "text-neutral-600",
+                index === 0 ? "border-transparent" : "border-neutral-200"
               )}
             >
               {navItem.name}
@@ -48,7 +49,7 @@ const Sidebar = () => {
         </div>
       </div>
       <div className="w-full flex flex-col py-3 gap-2 px-2">
-        <h3 className="text-md px-2 font-semibold text-neutral-400 underline">
+        <h3 className="text-md px-2 font-semibold text-neutral-800 underline">
           Community
         </h3>
         <div className="flex gap-5 px-2 text-xl p-1 border-b pb-4">
