@@ -17,7 +17,7 @@ const CoreTeam = ({ containerRef }: CoreTeamProps) => {
   const center1 = useRef<HTMLDivElement>(null);
   const center2 = useRef<HTMLDivElement>(null);
   return (
-    <div className="w-full flex flex-col items-stretch justify-between gap-10">
+    <div className="w-full flex flex-col items-stretch justify-between gap-10 mb-20">
       <div className="flex flex-col items-center justify-between gap-10">
         <BranchCard className="w-fit" isDss ref={div1Ref} />
         <BranchCard isLead ref={div2Ref} />

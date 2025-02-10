@@ -2,7 +2,7 @@ import { DssLists } from "@/lib/lists/dss-lists";
 
 const DssBrings = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center my-10 px-10">
+    <div className="w-full flex flex-col items-center justify-center my-10 mb-20 px-10">
       <div className="flex flex-col justify-center items-center gap-10 w-full">
         <div className="flex flex-col justify-center items-center gap-2">
           <h3 className="text-2xl md:text-4xl font-bold text-neutral-800 text-center tracking-tighter">

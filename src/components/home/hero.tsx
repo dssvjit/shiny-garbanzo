@@ -1,10 +1,10 @@
 const HeroSection = () => {
   return (
-    <div className="relative w-full flex flex-col justify-center  sm:justify-start items-center h-svh px-3 py-24 sm:py-12">
+    <div className="relative w-full flex flex-col justify-center items-center h-svh px-3 py-24 sm:py-12">
       <img
         src="/assets/vectors/vjitcrane.svg"
         alt="VJIT"
-        className="absolute right-0 top-48 hidden sm:block"
+        className="absolute right-0 top-48 hidden lg:block"
       />
       <img
         src="/assets/vectors/heroteam.svg"
@@ -17,7 +17,7 @@ const HeroSection = () => {
         className="absolute -z-[1] w-full bottom-0 sm:hidden"
       />
 
-      <div className="flex flex-col justify-center items-center gap-2 -translate-y-36 sm:translate-y-0">
+      <div className="flex flex-col justify-center items-center gap-2 -translate-y-36 sm:-translate-y-24 md:-translate-y-36 lg:-translate-y-48">
         <div className="flex justify-center items-center border border-neutral-400 rounded-lg p-1 px-3 bg-white shadow-sm">
           <span className="text-[9px] md:text-xs text-center">
             For the Students ✨ By the students
@@ -30,8 +30,9 @@ const HeroSection = () => {
             <br />
             {"Developers".toUpperCase()}
           </h2>
-          <p className="text-md sm:text-xl tracking-tighter font-light text-center text-neutral-700 mt-2 w-4/5">
+          <p className="text-md sm:text-xl tracking-tighter font-light text-center text-neutral-600 mt-2">
             DSS at VJIT College is a thriving community of developers,
+            <br />
             designers, and tech enthusiasts who collaborate to learn, build, and
             grow together.
           </p>
