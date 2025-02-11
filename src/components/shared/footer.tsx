@@ -5,9 +5,13 @@ import { NavLink, useLocation } from "react-router-dom";
 const FooterSection = () => {
   const { pathname } = useLocation();
   return (
-    <footer className="w-full relative flex flex-col justify-center items-center mt-10 py-20 border-t border-t-neutral-300">
+    <footer className="w-full relative flex flex-col justify-center items-center py-10 border-t border-t-neutral-300">
       <div className="flex flex-col justify-center items-center gap-4">
-        <img src="/logo-text.svg" alt="LOGO TEXT" className="w-40 md:w-60" />
+        <img
+          src="/assets/icons/logo-text.svg"
+          alt="LOGO TEXT"
+          className="w-40 md:w-60"
+        />
         <span className="text-xs md:text-[14px] w-4/5 text-neutral-500 text-center">
           DSS VJIT is more than just a club, it’s a thriving ecosystem where
           students grow, innovate, and transform into future tech leaders!

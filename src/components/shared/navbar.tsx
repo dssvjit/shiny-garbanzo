@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const Navbar = () => {
   const { pathname } = useLocation();
   return (
-    <nav className="w-full absolute top-0 flex items-center justify-between h-[60px] px-4 border-b border-b-neutral-300 bg-[#ffffff81] z-50 backdrop-blur-sm">
+    <nav className="w-full absolute sm:relative top-0 flex items-center justify-between h-[60px] px-4 border-b border-b-neutral-300 bg-[#ffffff81] z-50 backdrop-blur-sm">
       <Logo withText className="w-[70px] h-[70px]" />
       <ul className="hidden md:flex items-center gap-5 pr-2">
         {NavLists.map((navItem) => (
