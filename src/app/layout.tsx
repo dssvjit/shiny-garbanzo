@@ -5,6 +5,7 @@ import Navbar from "@/components/shared/navbar";
 import AboutPage from "@/app/pages/about.page";
 import FooterSection from "@/components/shared/footer";
 import TeamPage from "./pages/team.page";
+import EventsPage from "./pages/events.page";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/team/:domain" element={<TeamPage />} />
+        <Route path="/events" element={<EventsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <FooterSection />
