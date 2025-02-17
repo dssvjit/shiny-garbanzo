@@ -16,7 +16,7 @@
 
 .app:after {
   content: "";
-  background-image: url("/grid.svg");
+  background-image: url("/assets/vectors/grid.svg");
   z-index: -3;
   height: 100svh;
   position: absolute;
