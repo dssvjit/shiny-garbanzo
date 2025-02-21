@@ -15,9 +15,9 @@ const TeamPage = () => {
   }
 
   return (
-    <section className="min-h-svh flex flex-col justify-center items-center px-5 gap-2 py-10 sm:pb-20 pt-24 sm:pt-8">
-      <div className="flex flex-col justify-center items-center my-5">
-        <h2 className="text-3xl sm:text-[2.5rem] text-center text-neutral-800 tracking-tighter font-semibold">
+    <section className="w-full min-h-svh flex flex-col justify-center items-start px-5 gap-4 sm:gap-7 py-10 sm:pb-20 pt-24 sm:pt-8">
+      <div className="w-full flex flex-col justify-center items-center">
+        <h2 className="text-3xl sm:text-4xl text-center text-neutral-800 tracking-tighter font-semibold">
           {TeamContentList[domain].title}
           <br />
         </h2>
@@ -25,51 +25,44 @@ const TeamPage = () => {
           {TeamContentList[domain].description}
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center gap-8">
-        <div className="flex  justify-center items-center gap-4">
+      <div className="w-full flex flex-col justify-center items-center gap-5">
+        <div className="w-full flex flex-col justify-center items-center gap-2">
+          <h4 className="text-2xl text-neutral-700 tracking-tighter font-semibold">
+            Meet our {TeamContentList[domain].position} Lead
+          </h4>
           <img
             src={TeamContentList[domain].leadImage}
             alt={domain}
-            className="w-32 md:w-40 rounded-md"
+            className="w-36 lg:w-40 rounded-md"
           />
-          <div className="h-32 md:h-40 flex flex-col justify-center items-start md:gap-3">
-            <div className="flex flex-col justify-center items-start">
-              <p className="text-sm md:text-base text-neutral-700 tracking-tighter">
-                {TeamContentList[domain].position} Lead
-              </p>
-              <h5 className="text-xl md:text-2xl text-neutral-700 tracking-tighter font-semibold">
-                {TeamContentList[domain].name}
-              </h5>
+        </div>
+        <div className="w-full flex flex-col justify-center items-center gap-3">
+          <h5 className="text-xl text-center text-neutral-700 tracking-tighter font-semibold">
+            Introducing Our {TeamContentList[domain].position} Team Members
+          </h5>
+          <div className="w-full flex flex-wrap justify-center items-center gap-2">
+            <div className="p-3 h-40 md:w-60 w-40 md:h-60 bg-neutral-200">
+              hi
             </div>
-            <div className="flex flex-col justify-center items-start">
-              <h5 className="text-sm md:text-base text-neutral-700 tracking-tighter">
-                {TeamContentList[domain].position} Team
-              </h5>
-              <p className="text-lg text-neutral-700 tracking-tight font-semibold">
-                {TeamContentList[domain].team.length} Members
-              </p>
+            <div className="p-3 h-40 md:w-60 w-40 md:h-60 bg-neutral-200">
+              hi
+            </div>
+            <div className="p-3 h-40 md:w-60 w-40 md:h-60 bg-neutral-200">
+              hi
+            </div>
+            <div className="p-3 h-40 md:w-60 w-40 md:h-60 bg-neutral-200">
+              hi
+            </div>
+            <div className="p-3 h-40 md:w-60 w-40 md:h-60 bg-neutral-200">
+              hi
+            </div>
+            <div className="p-3 h-40 md:w-60 w-40 md:h-60 bg-neutral-200">
+              hi
+            </div>
+            <div className="p-3 h-40 md:w-60 w-40 md:h-60 bg-neutral-200">
+              hi
             </div>
           </div>
-        </div>
-        <div className="flex flex-wrap justify-center items-center gap-7 mt-6">
-          {TeamContentList[domain].team.map((member) => (
-            <div
-              key={member.id}
-              className="flex flex-col justify-center items-center"
-            >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-48 h-48 rounded-md"
-              />
-              <h5 className="text-xl md:text-lg text-neutral-700 tracking-tighter font-semibold mt-1">
-                {member.name}
-              </h5>
-              <span className="text-xs md:text-md text-neutral-700 tracking-tighter font-light">
-                {member.branch} {member.year}
-              </span>
-            </div>
-          ))}
         </div>
       </div>
     </section>

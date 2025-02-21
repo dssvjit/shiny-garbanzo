@@ -25,6 +25,28 @@
   top: 0;
 }
 
+.coreteam:before {
+  content: "";
+  background-image: url("/assets/vectors/grid.svg");
+  z-index: -3;
+  height: 100svh;
+  position: absolute;
+  width: 100%;
+  filter: invert(1);
+  top: 0;
+}
+
+.coreteam::after {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.575) 0, #ffffff 100%);
+  position: absolute;
+  content: "";
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+
 @layer base {
   :root {
 

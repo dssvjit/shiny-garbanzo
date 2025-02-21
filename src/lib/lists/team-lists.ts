@@ -197,7 +197,7 @@ export const NonTechTeamList = [
     name: "Kevin Jonathan",
     image:
       "https://i.pinimg.com/474x/dc/13/ce/dc13cebeb8a18d877dead7cbedc1c0fc.jpg",
-    year: "IIi Year",
+    year: "III Year",
     branch: "CSE",
   },
   {
