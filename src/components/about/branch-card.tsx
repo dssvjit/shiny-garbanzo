@@ -31,19 +31,19 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
 
     switch (position) {
       case "Design":
-        bgPath = "/assets/images/design-bg.png";
+        bgPath = "/assets/images/core-bg/design-bg.png";
         bgClass = "w-20 sm:w-60 absolute bottom-0 right-0 rounded-md";
         break;
       case "Technical":
-        bgPath = "/assets/images/tech-bg.jpg";
+        bgPath = "/assets/images/core-bg/tech-bg.jpg";
         bgClass = "w-11 sm:w-48 absolute bottom-0 right-0 rounded-md";
         break;
       case "Non-Technical":
-        bgPath = "/assets/images/nontech-bg.jpg";
+        bgPath = "/assets/images/core-bg/nontech-bg.jpg";
         bgClass = "w-16 sm:w-52 absolute bottom-0 right-0 rounded-md";
         break;
       case "PR-OR":
-        bgPath = "/assets/images/pror-bg.png";
+        bgPath = "/assets/images/core-bg/pror-bg.png";
         bgClass = "w-16 sm:w-52 absolute bottom-0 right-0 rounded-md";
         break;
     }
@@ -53,7 +53,7 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
         <div
           ref={ref}
           className={cn(
-            "z-10 flex items-center justify-center border bg-white gap-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+            "z-20 flex items-center justify-center border bg-white gap-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
             className
           )}
         >
@@ -67,7 +67,7 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
         <div
           ref={ref}
           className={cn(
-            "z-10 w-full flex items-center justify-center rounded-md border bg-white gap-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+            "z-20 w-full flex items-center justify-center rounded-md border bg-white gap-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
             className
           )}
         >
@@ -85,12 +85,12 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
         <div
           ref={ref}
           className={cn(
-            "z-10 flex items-center justify-center rounded-md border bg-white p-3 sm:p-5 gap-2 sm:gap-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+            "z-20 flex items-center justify-center rounded-md border bg-white p-3 sm:p-5 gap-2 sm:gap-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
             className
           )}
         >
           <img
-            src="/assets/images/Spandana.jpg"
+            src="/assets/images/core/Spandana.jpg"
             alt="image"
             className="rounded-md w-24 h-24 sm:h-32 sm:w-32"
           />
@@ -117,7 +117,7 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
       <div
         ref={ref}
         className={cn(
-          "z-10 flex flex-col items-start rounded-md  justify-center border bg-white p-3 sm:p-5 gap-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] relative",
+          "z-20 flex flex-col items-start rounded-md  justify-center border bg-white p-3 sm:p-5 gap-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] relative",
           className
         )}
       >
@@ -128,7 +128,7 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
         />
         <div className="flex justify-between items-start w-full gap-1">
           <img
-            src={`/assets/images/${position}.jpg`}
+            src={`/assets/images/core/${position}.jpg`}
             alt="image"
             className="rounded-md w-20 h-20 sm:h-28 sm:w-28"
           />

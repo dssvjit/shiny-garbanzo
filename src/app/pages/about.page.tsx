@@ -8,7 +8,7 @@ export function AnimatedBeamDemo() {
 
   return (
     <div
-      className="relative min-h-svh flex flex-col w-full items-center justify-start px-5 pt-32 sm:py-14 gap-10"
+      className="relative min-h-svh flex flex-col w-full items-center justify-start pt-32 sm:py-14 gap-10"
       ref={containerRef}
     >
       <img
@@ -21,7 +21,7 @@ export function AnimatedBeamDemo() {
         alt="SVG RIGHT"
         className="absolute top-60 right-0 w-[300px] lg:w-[500px] hidden md:block"
       />
-      <div className="sm:w-4/5 flex flex-col justify-center items-center">
+      <div className="sm:w-4/5 flex flex-col justify-center items-center px-5">
         <h1 className="text-2xl sm:text-4xl tracking-tighter font-semibold text-center text-neutral-900">
           {"We are the people who make up the core team of".toUpperCase()}
           <br />
