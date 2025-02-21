@@ -17,13 +17,13 @@ const CoreTeam = ({ containerRef }: CoreTeamProps) => {
   const center1 = useRef<HTMLDivElement>(null);
   const center2 = useRef<HTMLDivElement>(null);
   return (
-    <div className="w-full flex flex-col items-stretch justify-between gap-10">
+    <div className="w-full flex flex-col items-stretch justify-between gap-10 mb-20">
       <div className="flex flex-col items-center justify-between gap-10">
         <BranchCard className="w-fit" isDss ref={div1Ref} />
         <BranchCard isLead ref={div2Ref} />
         <div
           ref={gridContainerRef}
-          className="relative grid grid-cols-2 grid-rows-2 mt-10 w-full gap-4 gap-y-5 sm:gap-16 lg:w-11/12 lg:gap-x-40 lg:gap-y-14 py-20"
+          className="relative grid grid-cols-2 grid-rows-2 mt-10 w-full gap-4 gap-y-5 sm:gap-16 lg:w-10/12 lg:gap-x-40 lg:gap-y-14 py-20"
         >
           <BranchCard
             isCore
