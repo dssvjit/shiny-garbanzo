@@ -1,13 +1,15 @@
 import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
+import { Ellipsis, ExternalLink, Linkedin, UserRoundCog } from "lucide-react";
+
 import {
-  ExternalLink,
-  Link2,
-  Linkedin,
-  UserRoundCog,
-  Users,
-} from "lucide-react";
-import { Link } from "react-router-dom";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 type BranchCardProps = {
   className?: string;
@@ -90,7 +92,7 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
           <img
             src="/assets/images/Spandana.jpg"
             alt="image"
-            className="rounded-md w-20 h-20 sm:h-32 sm:w-32"
+            className="rounded-md w-24 h-24 sm:h-32 sm:w-32"
           />
           <div className="h-24 flex flex-col justify-center items-start sm:gap-1 rounded-md">
             <div className="flex justify-between items-center w-full">
@@ -119,42 +121,33 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
           className
         )}
       >
-        <img src={bgPath} alt="Design bg" className={bgClass} />
+        <img
+          src={bgPath}
+          alt="Design bg"
+          className={cn("hidden md:block", bgClass)}
+        />
         <div className="flex justify-between items-start w-full gap-1">
           <img
             src={`/assets/images/${position}.jpg`}
             alt="image"
-            className="rounded-md w-16 h-16 sm:h-28 sm:w-28"
+            className="rounded-md w-20 h-20 sm:h-28 sm:w-28"
           />
-          <div className="flex flex-wrap justify-end items-center gap-1">
-            <Link
-              to={"/"}
-              className="flex justify-center items-center border border-neutral-400 rounded-md p-2"
-            >
-              <Linkedin className="h-3 w-3 cursor-pointer" color="#3f3f3f" />
-            </Link>
-            <Link
-              to={"/"}
-              className="flex justify-center items-center border border-neutral-400 rounded-md p-2"
-            >
-              <Users className="h-3 w-3 cursor-pointer" color="#3f3f3f" />
-            </Link>
-            <Link
-              to={`/team/${position?.toLowerCase()}`}
-              className="flex justify-center items-center border border-neutral-400 rounded-md p-2"
-            >
-              <ExternalLink
-                className="h-3 w-3 cursor-pointer"
-                color="#3f3f3f"
-              />
-            </Link>
-            <Link
-              to={"/"}
-              className="flex justify-center items-center border border-neutral-400 rounded-md p-2"
-            >
-              <Link2 className="h-3 w-3 cursor-pointer" color="#3f3f3f" />
-            </Link>
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex flex-wrap justify-end items-center gap-1 p-2 border rounded-md outline-none">
+              <Ellipsis className="h-3 w-3 cursor-pointer" color="#3f3f3f" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="-translate-x-2">
+              <DropdownMenuLabel>Details</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <a
+                href={`/team/${position?.toLocaleLowerCase()}`}
+                className="cursor-pointer"
+              >
+                <DropdownMenuItem>Team</DropdownMenuItem>
+              </a>
+              <DropdownMenuItem>LinkedIn</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
         <div className="flex flex-col justify-center items-start sm:gap-1">
           <span className="text-xs sm:text-lg font-light text-neutral-800">

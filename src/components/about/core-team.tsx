@@ -23,7 +23,7 @@ const CoreTeam = ({ containerRef }: CoreTeamProps) => {
         <BranchCard isLead ref={div2Ref} />
         <div
           ref={gridContainerRef}
-          className="relative grid grid-cols-2 grid-rows-2 mt-10 w-full gap-4 gap-y-5 sm:gap-16 lg:w-11/12 lg:gap-x-40 lg:gap-y-14 py-20"
+          className="relative grid grid-cols-2 grid-rows-2 mt-10 w-full gap-4 gap-y-5 sm:gap-16 lg:w-10/12 lg:gap-x-40 lg:gap-y-14 py-20"
         >
           <BranchCard
             isCore

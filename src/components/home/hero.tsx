@@ -17,24 +17,24 @@ const HeroSection = () => {
         className="absolute -z-[1] w-full bottom-0 sm:hidden"
       />
 
-      <div className="flex flex-col justify-center items-center gap-2 -translate-y-36 sm:-translate-y-24 md:-translate-y-36 lg:-translate-y-48">
-        <div className="flex justify-center items-center border border-neutral-400 rounded-lg p-1 px-3 bg-white shadow-sm">
-          <span className="text-[9px] md:text-xs text-center">
+      <div className="flex flex-col justify-center items-center gap-3 -translate-y-36 sm:-translate-y-24 md:-translate-y-36 lg:-translate-y-56">
+        <div className="flex justify-center items-center border border-neutral-400 rounded-full p-1 px-3 bg-white shadow-sm">
+          <span className="text-[10px] text-center text-neutral-800">
             For the Students ✨ By the students
           </span>
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <h2 className="text-3xl sm:text-5xl text-center text-neutral-800 tracking-tighter font-semibold">
+          <h2 className="text-3xl sm:text-[2.5rem] text-center text-neutral-800 tracking-tighter font-semibold">
             {"A community Empowering Student".toUpperCase()}
             <br />
             {"Developers".toUpperCase()}
           </h2>
-          <p className="text-md sm:text-xl tracking-tighter font-light text-center text-neutral-600 mt-2">
+          <p className="text-md sm:text-lg tracking-tighter font-light text-center text-neutral-600 mt-2">
             DSS at VJIT College is a thriving community of developers,
+            designers, and tech enthusiasts who collaborate to learn,
             <br />
-            designers, and tech enthusiasts who collaborate to learn, build, and
-            grow together.
+            build, and grow together.
           </p>
         </div>
       </div>
