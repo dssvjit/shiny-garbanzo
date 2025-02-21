@@ -9,7 +9,7 @@ import {
 import Logo from "@/components/shared/logo";
 import { Github, Instagram, Linkedin, X } from "lucide-react";
 import { NavLists } from "@/lib/lists/nav-lists";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const Sidebar = () => {
@@ -34,9 +34,9 @@ const Sidebar = () => {
         </h3>
         <div className="flex flex-col px-2 text-xl p-1 border-b pb-4 text-neutral-800">
           {NavLists.map((navItem, index) => (
-            <NavLink
+            <a
               key={navItem.route}
-              to={navItem.route}
+              href={navItem.route}
               className={cn(
                 "transition-colors duration-300 tracking-tighter border-t py-2",
                 navItem.route === pathname ? "text-black" : "text-neutral-600",
@@ -44,7 +44,7 @@ const Sidebar = () => {
               )}
             >
               {navItem.name}
-            </NavLink>
+            </a>
           ))}
         </div>
       </div>

@@ -22,10 +22,9 @@ export function AnimatedBeamDemo() {
         className="absolute top-60 right-0 w-[300px] lg:w-[500px] hidden md:block"
       />
       <div className="sm:w-4/5 flex flex-col justify-center items-center">
-        <h2 className="text-lg sm:text-3xl tracking-tighter font-semibold text-center text-neutral-800">
-          {"We are the people who make up".toUpperCase()}
-        </h2>
         <h1 className="text-2xl sm:text-4xl tracking-tighter font-semibold text-center text-neutral-900">
+          {"We are the people who make up the core team of".toUpperCase()}
+          <br />
           {"Developer Student Society VJIT".toUpperCase()}
         </h1>
         <p className="text-center text-xs sm:text-lg text-neutral-700 mt-2 sm:w-4/5 font-light tracking-tighter ">

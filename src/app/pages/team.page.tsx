@@ -26,28 +26,28 @@ const TeamPage = () => {
         </p>
       </div>
       <div className="flex flex-col justify-center items-center gap-8">
-        <div className="flex  justify-center items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-center items-center md:gap-4">
           <img
             src={TeamContentList[domain].leadImage}
             alt={domain}
-            className="w-32 md:w-40 rounded-md"
+            className="w-48 md:w-40 rounded-md"
           />
-          <div className="h-32 md:h-40 flex flex-col justify-center items-start md:gap-3">
-            <div className="flex flex-col justify-center items-start">
-              <p className="text-sm md:text-base text-neutral-700 tracking-tighter">
+          <div className="h-32 md:h-40 flex flex-col justify-center items-center md:items-start gap-1 md:gap-3 ">
+            <div className="flex flex-col justify-center items-center md:items-start">
+              <span className="text-sm md:text-base text-neutral-700 tracking-tighter">
                 {TeamContentList[domain].position} Lead
-              </p>
-              <h5 className="text-xl md:text-2xl text-neutral-700 tracking-tighter font-semibold">
+              </span>
+              <h5 className="text-2xl text-neutral-700 tracking-tighter font-semibold">
                 {TeamContentList[domain].name}
               </h5>
             </div>
-            <div className="flex flex-col justify-center items-start">
-              <h5 className="text-sm md:text-base text-neutral-700 tracking-tighter">
+            <div className="flex flex-col justify-center items-center md:items-start">
+              <span className="text-sm md:text-base text-neutral-700 tracking-tighter">
                 {TeamContentList[domain].position} Team
-              </h5>
-              <p className="text-lg text-neutral-700 tracking-tight font-semibold">
+              </span>
+              <h3 className="text-lg text-neutral-700 tracking-tight font-semibold">
                 {TeamContentList[domain].team.length} Members
-              </p>
+              </h3>
             </div>
           </div>
         </div>
@@ -60,13 +60,13 @@ const TeamPage = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-48 h-48 rounded-md"
+                className="w-64 h-64 md:w-52 md:h-52 rounded-md"
               />
-              <h5 className="text-xl md:text-lg text-neutral-700 tracking-tighter font-semibold mt-1">
+              <h5 className="text-xl text-neutral-700 tracking-tighter font-semibold mt-1">
                 {member.name}
               </h5>
-              <span className="text-xs md:text-md text-neutral-700 tracking-tighter font-light">
-                {member.branch} {member.year}
+              <span className="text-xs md:text-base text-neutral-700 tracking-tighter font-light">
+                {member.year} {member.branch}
               </span>
             </div>
           ))}
