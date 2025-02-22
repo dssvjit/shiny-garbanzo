@@ -11,7 +11,11 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import OrElementAuth from "../auth/or-element.auth";
 
+import useGoogleOAuthLogin from "@/hooks/use-google-oauth-login";
+
 const AuthForm = () => {
+  const { handleGoogleLogin } = useGoogleOAuthLogin();
+
   const form = useForm<z.infer<typeof authSchema>>({
     resolver: zodResolver(authSchema),
     defaultValues: {
@@ -22,6 +26,7 @@ const AuthForm = () => {
   function onSubmit(values: z.infer<typeof authSchema>) {
     console.log(values);
   }
+
   return (
     <div className="w-full flex flex-col justify-center items-center text-center gap-8">
       <div className="flex flex-col justify-center items-center gap-6">
@@ -53,7 +58,12 @@ const AuthForm = () => {
       <div className="relative w-full flex flex-col justify-center items-center gap-6">
         <OrElementAuth />
         <div className="w-full flex flex-col justify-center items-center gap-3">
-          <Button type="submit" variant={"outline"} className="w-full ">
+          <Button
+            onClick={handleGoogleLogin}
+            type="submit"
+            variant={"outline"}
+            className="w-full "
+          >
             <FcGoogle />
             Login with Google
           </Button>

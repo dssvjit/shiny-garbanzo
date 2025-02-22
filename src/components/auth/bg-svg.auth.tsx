@@ -8,8 +8,8 @@ const BgSvgAuth = () => {
           x2="100%"
           y2="1"
           stroke="#A9A9A9"
-          stroke-width="2"
-          stroke-dasharray="5,5"
+          strokeWidth="2"
+          strokeDasharray="5,5"
           className=""
         />
       </svg>
@@ -24,8 +24,8 @@ const BgSvgAuth = () => {
           x2="100%"
           y2="1"
           stroke="#A9A9A9"
-          stroke-width="2"
-          stroke-dasharray="5,5"
+          strokeWidth="2"
+          strokeDasharray="5,5"
         />
       </svg>
       <svg width="2" height="100%" className="absolute hidden md:block left-8">
@@ -35,8 +35,8 @@ const BgSvgAuth = () => {
           x2="1"
           y2="100%"
           stroke="#A9A9A9"
-          stroke-width="2"
-          stroke-dasharray="5,5"
+          strokeWidth="2"
+          strokeDasharray="5,5"
         />
       </svg>
     </>
