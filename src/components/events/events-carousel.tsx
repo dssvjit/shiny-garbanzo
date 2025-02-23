@@ -34,7 +34,7 @@ function EventCarousel() {
                       backgroundPosition: "center",
                     }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <div className="relative text-white">
                       <h2 className="text-xl md:text-3xl font-bold mb-2">
                         {event.title}

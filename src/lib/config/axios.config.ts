@@ -17,6 +17,6 @@ api.interceptors.request.use(async (config) => {
     token = await refreshAccessToken();
   }
 
-  config.headers.Authorization = token;
+  config.headers.Authorization = `Bearer ${token}`;
   return config;
 });

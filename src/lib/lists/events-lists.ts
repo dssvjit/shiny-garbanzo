@@ -1,31 +1,27 @@
 export const CarouselEventsLists = [
   {
-    title: "A MAGICAL JOURNEY",
-    description: "Join DSS VJIT for their magical event bliss!",
-    subtitle: "A Place where ideas meet reality and tech meets magic.",
-    buttonText: "Attend Now",
-    image: "/assets/images/events/car1.jpg",
+    title: "Public Profile Building",
+    description:
+      "Want to stand out in the tech world? We showed students how to craft a killer online presence on LinkedIn, GitHub, and personal portfolios. A roadmap to visibility, credibility, and career-defining opportunities!",
+    subtitle: "Your profile is your brand—let's make it extraordinary!",
+    buttonText: "Explore More",
+    image: "/assets/images/events/public-wide.jpg",
   },
   {
-    title: "INNOVATE & CREATE",
-    description: "Explore the world of innovation with DSS",
-    subtitle: "Where creativity knows no bounds",
-    buttonText: "Join Now",
-    image: "/assets/images/events/car2.webp",
+    title: "Infodrop – Weekly Tech Insights",
+    description:
+      "Tech never stops evolving, and neither do we! Infodrop delivers bite-sized, high-impact insights covering AI, Web3, cloud, and more—keeping our community ahead of the curve, one post at a time.",
+    subtitle: "Stay ahead, stay informed, stay inspired!",
+    buttonText: "Discover Insights",
+    image: "/assets/images/events/infodrop-wide.jpg",
   },
   {
-    title: "TECH SYMPOSIUM",
-    description: "Experience the future of technology",
-    subtitle: "Bringing together the brightest minds in tech",
-    buttonText: "Register Now",
-    image: "/assets/images/events/car3.jpg",
-  },
-  {
-    title: "COLLABORATIVE SPIRIT",
-    description: "Build, Learn, and Grow Together",
-    subtitle: "Join our community of innovators",
-    buttonText: "Join Us",
-    image: "/assets/images/events/car4.jpg",
+    title: "Calling Blockchain",
+    description:
+      "The future is decentralized! This electrifying session took deep dives into smart contracts, consensus mechanisms, and the real-world applications of blockchain. A must-attend for crypto-curious minds!",
+    subtitle: "Revolutionizing industries—one block at a time!",
+    buttonText: "Dive In",
+    image: "/assets/images/events/blockchain-wide.jpg",
   },
 ];
 

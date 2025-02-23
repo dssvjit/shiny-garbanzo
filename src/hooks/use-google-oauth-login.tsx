@@ -11,7 +11,10 @@ const useGoogleOAuthLogin = () => {
     try {
       const response = await loginWithGoogle(result.code);
 
-      localStorage.setItem("dss-accessToken", response.accessToken);
+      localStorage.setItem(
+        "dss-accessToken",
+        response.accessToken.split(" ")[1]
+      );
 
       navigate("/");
     } catch (error) {
@@ -31,7 +34,13 @@ const useGoogleOAuthLogin = () => {
     flow: "auth-code",
   });
 
-  return { handleGoogleLogin };
+  const handleGoogleLogout = () => {
+    localStorage.removeItem("dss-accessToken");
+
+    navigate("/");
+  };
+
+  return { handleGoogleLogin, handleGoogleLogout };
 };
 
 export default useGoogleOAuthLogin;

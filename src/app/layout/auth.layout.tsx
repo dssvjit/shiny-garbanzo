@@ -1,7 +1,8 @@
+import { isTokenExpired } from "@/lib/jwt";
 import { Navigate, Outlet } from "react-router-dom";
 
 const AuthLayout = () => {
-  if (localStorage.getItem("dss-accessToken")) {
+  if (!isTokenExpired(localStorage.getItem("dss-accessToken") || "")) {
     return (
       <>
         <Navigate to="/" />

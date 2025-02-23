@@ -23,7 +23,10 @@ export const refreshAccessToken = async () => {
       refreshToken,
     });
 
-    localStorage.setItem("accessToken", response.data.accessToken);
+    localStorage.setItem(
+      "accessToken",
+      response.data.accessToken.split(" ")[1]
+    );
 
     return response.data.accessToken;
   } catch (error) {

@@ -20,6 +20,7 @@ const FooterSection = () => {
       <div className="flex flex-wrap justify-center items-center gap-3 py-5 px-10">
         {NavLists.map((navItem) => (
           <NavLink
+            key={navItem.route}
             to={navItem.route}
             className={cn(
               "text-lg text-neutral-600",
