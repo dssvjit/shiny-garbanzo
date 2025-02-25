@@ -10,10 +10,16 @@ import {
   ConductedEventsList,
   UpcomingEventsList,
 } from "@/lib/lists/events-lists";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import markdown from "@/components/events/markdown/example.md?raw";
 
 export default function EventsPage() {
   return (
     <section className="w-full min-h-svh flex flex-col items-center justify-start gap-10 md:gap-20 translate-y-[60px] sm:translate-y-0 mb-[90px]">
+      <div className="prose">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+      </div>
       <EventCarousel />
       <div className="flex flex-col justify-center items-center w-full gap-10">
         <div className="flex flex-col justify-center items-center px-5">
