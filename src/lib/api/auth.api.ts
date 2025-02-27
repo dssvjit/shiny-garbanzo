@@ -4,7 +4,11 @@ import { isTokenExpired } from "../jwt";
 export const loginWithGoogle = async (code: string) => {
   const response = await api.get(`/api/auth/google?code=${code}`);
 
-  console.log("API RESPONSE: ", response);
+  return response.data.data;
+};
+
+export const loginWithGithub = async (code: string) => {
+  const response = await api.get(`/api/auth/github?code=${code}`);
 
   return response.data.data;
 };

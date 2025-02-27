@@ -1,8 +1,9 @@
 import { loginWithGoogle } from "@/lib/api/auth.api";
+import { GITHUB_AUTH_URL } from "@/lib/env";
 import { CodeResponse, useGoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 
-const useGoogleOAuthLogin = () => {
+const useOAuth = () => {
   const navigate = useNavigate();
 
   const googleResponseHandler = async (
@@ -34,13 +35,17 @@ const useGoogleOAuthLogin = () => {
     flow: "auth-code",
   });
 
+  const handleGithubLogin = async () => {
+    window.location.href = GITHUB_AUTH_URL;
+  };
+
   const handleGoogleLogout = () => {
     localStorage.removeItem("dss-accessToken");
 
     navigate("/");
   };
 
-  return { handleGoogleLogin, handleGoogleLogout };
+  return { handleGoogleLogin, handleGoogleLogout, handleGithubLogin };
 };
 
-export default useGoogleOAuthLogin;
+export default useOAuth;

@@ -11,10 +11,10 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import OrElementAuth from "../auth/or-element.auth";
 
-import useGoogleOAuthLogin from "@/hooks/use-google-oauth-login";
+import useOAuth from "@/hooks/use-oauth";
 
 const AuthForm = () => {
-  const { handleGoogleLogin } = useGoogleOAuthLogin();
+  const { handleGoogleLogin, handleGithubLogin } = useOAuth();
 
   const form = useForm<z.infer<typeof authSchema>>({
     resolver: zodResolver(authSchema),
@@ -68,7 +68,7 @@ const AuthForm = () => {
             Login with Google
           </Button>
 
-          <Button type="submit" className="w-full">
+          <Button onClick={handleGithubLogin} type="submit" className="w-full">
             <FaGithub />
             Login with Github
           </Button>

@@ -9,6 +9,8 @@ import AppLayout from "./layout/app.layout";
 import AuthLayout from "./layout/auth.layout";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GOOGLE_CLIENT_ID } from "@/lib/env";
+import { Toaster } from "@/components/ui/sonner";
+import GithubAuthRedirect from "./redirects/github-auth.redirect";
 
 function App() {
   return (
@@ -17,6 +19,10 @@ function App() {
         <Routes>
           <Route path="/auth" element={<AuthLayout />}>
             <Route path="" element={<AuthPage />} />
+            <Route
+              path="/auth/callback/github"
+              element={<GithubAuthRedirect />}
+            />
           </Route>
           <Route path="/" element={<AppLayout />}>
             <Route index element={<HomePage />} />
@@ -27,6 +33,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </section>
+      <Toaster className="bg-neutral-50" />
     </GoogleOAuthProvider>
   );
 }

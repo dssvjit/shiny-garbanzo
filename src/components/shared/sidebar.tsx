@@ -13,7 +13,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { isTokenExpired } from "@/lib/jwt";
-import useGoogleOAuthLogin from "@/hooks/use-google-oauth-login";
+import useGoogleOAuthLogin from "@/hooks/use-oauth";
 
 const Sidebar = () => {
   const { pathname } = useLocation();
