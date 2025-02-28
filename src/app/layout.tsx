@@ -11,30 +11,35 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GOOGLE_CLIENT_ID } from "@/lib/env";
 import { Toaster } from "@/components/ui/sonner";
 import GithubAuthRedirect from "./redirects/github-auth.redirect";
+import OtpVerifyPage from "./pages/otp-verify.page";
+import { QueryProvider } from "@/lib/query/query-provider";
 
 function App() {
   return (
-    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-      <section className="w-full min-h-screen flex flex-col font-poppins">
-        <Routes>
-          <Route path="/auth" element={<AuthLayout />}>
-            <Route path="" element={<AuthPage />} />
-            <Route
-              path="/auth/callback/github"
-              element={<GithubAuthRedirect />}
-            />
-          </Route>
-          <Route path="/" element={<AppLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/team/:domain" element={<TeamPage />} />
-            <Route path="/events" element={<EventsPage />} />
-          </Route>
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </section>
-      <Toaster className="bg-neutral-50" />
-    </GoogleOAuthProvider>
+    <QueryProvider>
+      <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+        <section className="w-full min-h-screen flex flex-col font-poppins">
+          <Routes>
+            <Route path="/auth" element={<AuthLayout />}>
+              <Route path="" element={<AuthPage />} />
+              <Route
+                path="/auth/callback/github"
+                element={<GithubAuthRedirect />}
+              />
+              <Route path="/auth/otp/verify" element={<OtpVerifyPage />} />
+            </Route>
+            <Route path="/" element={<AppLayout />}>
+              <Route index element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/team/:domain" element={<TeamPage />} />
+              <Route path="/events" element={<EventsPage />} />
+            </Route>
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </section>
+        <Toaster theme="light" className="bg-neutral-50" />
+      </GoogleOAuthProvider>
+    </QueryProvider>
   );
 }
 

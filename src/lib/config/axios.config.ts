@@ -10,6 +10,13 @@ export const api = axios.create({
   },
 });
 
+export const publicApi = axios.create({
+  baseURL: SERVER_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
 api.interceptors.request.use(async (config) => {
   let token = localStorage.getItem("dss-accessToken");
 

@@ -1,27 +1,31 @@
 export const CarouselEventsLists = [
   {
+    title: "Kickstarting the DSS Journey",
+    description:
+      "The DSS Induction at VJIT kicked off an exciting journey for tech enthusiasts! New members explored our vision, core team, and the opportunities ahead.",
+    subtitle: "Welcome to the world of endless possibilities!",
+    image: "/assets/images/events/induction.jpg",
+  },
+  {
     title: "Public Profile Building",
     description:
-      "Want to stand out in the tech world? We showed students how to craft a killer online presence on LinkedIn, GitHub, and personal portfolios. A roadmap to visibility, credibility, and career-defining opportunities!",
+      "We guided students on building a standout tech presence on LinkedIn, GitHub, and portfolios—unlocking visibility, credibility, and career opportunities!",
     subtitle: "Your profile is your brand—let's make it extraordinary!",
-    buttonText: "Explore More",
-    image: "/assets/images/events/public-wide.jpg",
+    image: "/assets/images/events/public.jpg",
   },
   {
-    title: "Infodrop – Weekly Tech Insights",
+    title: "VJIT Ideathon 2025",
     description:
-      "Tech never stops evolving, and neither do we! Infodrop delivers bite-sized, high-impact insights covering AI, Web3, cloud, and more—keeping our community ahead of the curve, one post at a time.",
-    subtitle: "Stay ahead, stay informed, stay inspired!",
-    buttonText: "Discover Insights",
-    image: "/assets/images/events/infodrop-wide.jpg",
+      "A 24-hour hackathon where bright minds tackled real-world problems with tech—fueling creativity, innovation, and problem-solving to turn ideas into reality!",
+    subtitle: "Innovate. Collaborate. Create.",
+    image: "/assets/images/events/ideathon-2.jpg",
   },
   {
-    title: "Calling Blockchain",
+    title: "Building a Strong Technical Community",
     description:
-      "The future is decentralized! This electrifying session took deep dives into smart contracts, consensus mechanisms, and the real-world applications of blockchain. A must-attend for crypto-curious minds!",
-    subtitle: "Revolutionizing industries—one block at a time!",
-    buttonText: "Dive In",
-    image: "/assets/images/events/blockchain-wide.jpg",
+      "Interactive sessions at VJIT built a strong tech community through talks, workshops, and collaboration—fostering learning, growth, and innovation!",
+    subtitle: "Together, we can achieve greatness!",
+    image: "/assets/images/events/public-2.jpg",
   },
 ];
 

@@ -1,4 +1,4 @@
-import { authSchema } from "@/lib/schemas/auth.schema";
+import { LoginWithEmailSchema } from "@/lib/schemas/auth.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -12,19 +12,39 @@ import { FaGithub } from "react-icons/fa";
 import OrElementAuth from "../auth/or-element.auth";
 
 import useOAuth from "@/hooks/use-oauth";
+import { useSendOtpMail } from "@/lib/query/mutations/auth.query";
+import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
+import { RotatingLines } from "react-loader-spinner";
 
 const AuthForm = () => {
   const { handleGoogleLogin, handleGithubLogin } = useOAuth();
+  const { mutateAsync: sendOtpMail, isPending } = useSendOtpMail();
+  const navigate = useNavigate();
 
-  const form = useForm<z.infer<typeof authSchema>>({
-    resolver: zodResolver(authSchema),
+  const form = useForm<z.infer<typeof LoginWithEmailSchema>>({
+    resolver: zodResolver(LoginWithEmailSchema),
     defaultValues: {
       email: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof authSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof LoginWithEmailSchema>) {
+    if (!values.email) {
+      toast("Please enter a valid email address");
+      return;
+    }
+
+    const response = await sendOtpMail(values.email);
+
+    if (!response) {
+      toast("Failed to send OTP mail");
+      return;
+    }
+
+    localStorage.setItem("sent-mail", JSON.stringify(response));
+
+    navigate("/auth/otp/verify");
   }
 
   return (
@@ -49,8 +69,26 @@ const AuthForm = () => {
                 </>
               )}
             />
-            <Button type="submit" className="w-full bg-blue-500">
-              Submit
+            <Button
+              disabled={isPending}
+              type="submit"
+              className="w-full bg-blue-500 hover:bg-blue-600"
+            >
+              {isPending ? (
+                <>
+                  Loading
+                  <RotatingLines
+                    visible={true}
+                    width="96"
+                    strokeWidth="5"
+                    animationDuration="0.75"
+                    ariaLabel="rotating-lines-loading"
+                    strokeColor="#fff"
+                  />
+                </>
+              ) : (
+                "Login"
+              )}
             </Button>
           </form>
         </Form>

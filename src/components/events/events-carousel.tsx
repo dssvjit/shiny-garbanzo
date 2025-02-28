@@ -34,20 +34,17 @@ function EventCarousel() {
                       backgroundPosition: "center",
                     }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    <div className="relative text-white">
-                      <h2 className="text-xl md:text-3xl font-bold mb-2">
-                        {event.title}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-black/90 to-transparent" />
+                    <div className="relative flex flex-col justify-start items-start">
+                      <h2 className="text-lg md:text-3xl tracking-tighter font-semibold mb-2 text-neutral-300">
+                        {event.title.toUpperCase()}
                       </h2>
-                      <p className="text-sm md:text-lg mb-3 md:mb-4">
+                      <p className="text-xs md:text-lg mb-3 md:mb-4 w-full md:w-2/3 text-neutral-300">
                         {event.description}
                       </p>
-                      <p className="text-xs md:text-sm mb-4 md:mb-6">
+                      <p className="text-sm md:text-sm mb-4 md:mb-6 text-neutral-300">
                         {event.subtitle}
                       </p>
-                      <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-md transition-colors text-sm md:text-base">
-                        {event.buttonText}
-                      </button>
                     </div>
                   </div>
                 </CardContent>

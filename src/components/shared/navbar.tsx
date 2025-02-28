@@ -42,7 +42,7 @@ const Navbar = () => {
       <Link to="/">
         <Logo withText className="w-[70px] h-[70px]" />
       </Link>
-      <ul className="hidden md:flex items-center gap-5 pr-2">
+      <ul className="hidden md:flex items-center gap-5 pr-2 absolute left-1/2 -translate-x-1/2">
         {NavLists.map((navItem) => (
           <NavLink
             key={navItem.route}
