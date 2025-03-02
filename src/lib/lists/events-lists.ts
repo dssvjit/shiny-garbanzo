@@ -1,31 +1,31 @@
 export const CarouselEventsLists = [
   {
-    title: "A MAGICAL JOURNEY",
-    description: "Join DSS VJIT for their magical event bliss!",
-    subtitle: "A Place where ideas meet reality and tech meets magic.",
-    buttonText: "Attend Now",
-    image: "/assets/images/events/car1.jpg",
+    title: "Kickstarting the DSS Journey",
+    description:
+      "The DSS Induction at VJIT kicked off an exciting journey for tech enthusiasts! New members explored our vision, core team, and the opportunities ahead.",
+    subtitle: "Welcome to the world of endless possibilities!",
+    image: "/assets/images/events/induction.jpg",
   },
   {
-    title: "INNOVATE & CREATE",
-    description: "Explore the world of innovation with DSS",
-    subtitle: "Where creativity knows no bounds",
-    buttonText: "Join Now",
-    image: "/assets/images/events/car2.webp",
+    title: "Public Profile Building",
+    description:
+      "We guided students on building a standout tech presence on LinkedIn, GitHub, and portfolios—unlocking visibility, credibility, and career opportunities!",
+    subtitle: "Your profile is your brand—let's make it extraordinary!",
+    image: "/assets/images/events/public.jpg",
   },
   {
-    title: "TECH SYMPOSIUM",
-    description: "Experience the future of technology",
-    subtitle: "Bringing together the brightest minds in tech",
-    buttonText: "Register Now",
-    image: "/assets/images/events/car3.jpg",
+    title: "VJIT Ideathon 2025",
+    description:
+      "A 24-hour hackathon where bright minds tackled real-world problems with tech—fueling creativity, innovation, and problem-solving to turn ideas into reality!",
+    subtitle: "Innovate. Collaborate. Create.",
+    image: "/assets/images/events/ideathon-2.jpg",
   },
   {
-    title: "COLLABORATIVE SPIRIT",
-    description: "Build, Learn, and Grow Together",
-    subtitle: "Join our community of innovators",
-    buttonText: "Join Us",
-    image: "/assets/images/events/car4.jpg",
+    title: "Building a Strong Technical Community",
+    description:
+      "Interactive sessions at VJIT built a strong tech community through talks, workshops, and collaboration—fostering learning, growth, and innovation!",
+    subtitle: "Together, we can achieve greatness!",
+    image: "/assets/images/events/public-2.jpg",
   },
 ];
 
