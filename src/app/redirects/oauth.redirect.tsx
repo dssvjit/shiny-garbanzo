@@ -1,9 +1,9 @@
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import AuthPage from "../pages/auth.page";
-import { RotatingLines } from "react-loader-spinner";
 import { loginWithGithub, loginWithGoogle } from "@/lib/api/auth.api";
 import { useEffect } from "react";
 import { toast } from "sonner";
+import Spinner from "@/components/shared/spinner";
 
 type Provider = "github" | "google";
 
@@ -66,14 +66,7 @@ const OAuthRedirect = () => {
           </h3>
           <div className="w-full flex justify-center items-center gap-2 border-y py-3">
             <h1 className="text-lg">Redirecting</h1>
-            <RotatingLines
-              visible={true}
-              width="23"
-              strokeWidth="5"
-              animationDuration="0.75"
-              ariaLabel="rotating-lines-loading"
-              strokeColor="#000"
-            />
+            <Spinner color="#000" />
           </div>
           <span className="text-sm py-3">
             Please wait while we redirect you to the login page

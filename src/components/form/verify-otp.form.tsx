@@ -35,7 +35,7 @@ import {
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useSendOtpMail, useVerifyOtp } from "@/lib/query/mutations/auth.query";
-import { RotatingLines } from "react-loader-spinner";
+import Spinner from "../shared/spinner";
 
 interface VerifyOtpFormProps {
   local: {
@@ -168,15 +168,7 @@ const VerifyOtpForm = ({ local }: VerifyOtpFormProps) => {
           <Button disabled={isOtpExpired} type="submit" className="w-full">
             {isPending ? (
               <>
-                Loading{" "}
-                <RotatingLines
-                  visible={true}
-                  width="96"
-                  strokeWidth="5"
-                  animationDuration="0.75"
-                  ariaLabel="rotating-lines-loading"
-                  strokeColor="#fff"
-                />
+                Loading <Spinner width="96" color="#fff" />
               </>
             ) : (
               "Submit"

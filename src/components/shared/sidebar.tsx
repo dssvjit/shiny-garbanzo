@@ -13,10 +13,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { isTokenExpired } from "@/lib/jwt";
+import { useLogout } from "@/lib/query/mutations/auth.query";
 
 const Sidebar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const { mutateAsync: logout } = useLogout();
 
   return (
     <SheetContent className="p-5">
@@ -67,7 +69,11 @@ const Sidebar = () => {
           </>
         ) : (
           <>
-            <Button className="mt-5" variant={"destructive"}>
+            <Button
+              onClick={async () => await logout()}
+              className="mt-5 text-red-400"
+              variant={"outline"}
+            >
               Sign Out
             </Button>
           </>

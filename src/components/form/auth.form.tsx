@@ -6,16 +6,16 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import FormHeader from "../auth/form-header";
+import FormHeader from "@/components/auth/form-header";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import OrElementAuth from "../auth/or-element.auth";
+import OrElementAuth from "@/components/auth/or-element.auth";
 
 import useOAuth from "@/hooks/use-oauth";
 import { useSendOtpMail } from "@/lib/query/mutations/auth.query";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-import { RotatingLines } from "react-loader-spinner";
+import Spinner from "@/components/shared/spinner";
 
 const AuthForm = () => {
   const { handleGoogleLogin, handleGithubLogin } = useOAuth();
@@ -77,14 +77,7 @@ const AuthForm = () => {
               {isPending ? (
                 <>
                   Loading
-                  <RotatingLines
-                    visible={true}
-                    width="96"
-                    strokeWidth="5"
-                    animationDuration="0.75"
-                    ariaLabel="rotating-lines-loading"
-                    strokeColor="#fff"
-                  />
+                  <Spinner width="96" color="#fff" />
                 </>
               ) : (
                 "Login"

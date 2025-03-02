@@ -1,41 +1,32 @@
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import Sidebar from "@/components/shared/sidebar";
-import { AlignJustify } from "lucide-react";
+import { AlignJustify, Menu } from "lucide-react";
 import Logo from "@/components/shared/logo";
 import { NavLists } from "@/lib/lists/nav-lists";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { isTokenExpired } from "@/lib/jwt";
-import { useEffect, useState } from "react";
-import { getUserDetails } from "@/lib/api/user.api";
-import { UserDetailsType } from "@/lib/types/user.types";
+import Profile from "@/components/shared/profile";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useLogout } from "@/lib/query/mutations/auth.query";
 
 const Navbar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [userDetails, setUserDetails] = useState<UserDetailsType | null>(null);
+  const { mutateAsync: logout } = useLogout();
 
   const handleSignIn = () => {
     navigate("/auth");
   };
-
-  useEffect(() => {
-    const token = localStorage.getItem("dss-accessToken");
-
-    if (!token || token === null) {
-      return;
-    }
-
-    if (isTokenExpired(token)) {
-      return;
-    }
-
-    getUserDetails().then((data) => {
-      setUserDetails(data);
-    });
-  }, []);
 
   return (
     <nav className="w-full absolute sm:relative top-0 flex items-center justify-between h-[60px] px-6 border-b border-b-neutral-300 bg-[#ffffff81] z-50 backdrop-blur-sm">
@@ -74,30 +65,37 @@ const Navbar = () => {
         </>
       ) : (
         <>
-          {userDetails ? (
-            <div className="hidden md:flex items-center gap-4">
-              <img
-                src={userDetails.imageUrl}
-                alt={userDetails.name}
-                className="w-10 h-10 rounded-full"
-              />
-            </div>
-          ) : (
-            <></>
-          )}
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Profile />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="mr-7">
+              <DropdownMenuLabel className="text-center">
+                My Profile
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <Profile imgClassName="w-20 h-20" isBig />
+              <DropdownMenuSeparator />
+              <Button
+                onClick={async () => await logout()}
+                variant={"link"}
+                className="w-full text-red-500"
+              >
+                Log out
+              </Button>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <Sheet>
             <SheetTrigger className="cursor-pointer md:hidden">
-              {userDetails ? (
-                <div className="flex items-center gap-4">
-                  <img
-                    src={userDetails.imageUrl}
-                    alt={userDetails.name}
-                    className="w-10 h-10 rounded-full"
-                  />
-                </div>
+              {localStorage.getItem("dss-accessToken") ? (
+                <>
+                  <Profile className="block md:hidden" />
+                </>
               ) : (
-                <AlignJustify className="h-7 w-7 text-neutral-600" />
+                <>
+                  <Menu />
+                </>
               )}
             </SheetTrigger>
             <Sidebar />

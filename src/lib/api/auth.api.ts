@@ -53,6 +53,7 @@ export const refreshAccessToken = async () => {
 };
 
 export const logout = async () => {
-  const response = await api.put("/api/auth/logout");
-  return response.data.data;
+  localStorage.removeItem("dss-accessToken");
+  window.location.reload();
+  await api.put("/api/auth/logout");
 };
