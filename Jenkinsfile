@@ -1,5 +1,5 @@
 pipeline{
-    agents any 
+    agent any 
 
     tools {
         nodejs 'nodejs'
@@ -39,4 +39,8 @@ pipeline{
         }
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 62b72546a78dd9f3882abc981e5e20a1973a791c
