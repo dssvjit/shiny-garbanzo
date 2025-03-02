@@ -3,19 +3,16 @@ import { isTokenExpired } from "../jwt";
 
 export const loginWithGoogle = async (code: string) => {
   const response = await publicApi.get(`/api/auth/google?code=${code}`);
-
   return response.data.data;
 };
 
 export const loginWithGithub = async (code: string) => {
   const response = await publicApi.get(`/api/auth/github?code=${code}`);
-
   return response.data.data;
 };
 
 export const sendOtpMail = async (email: string) => {
   const response = await publicApi.get(`/api/auth/email/otp?email=${email}`);
-
   return response.data.data;
 };
 
@@ -25,7 +22,6 @@ export const verifyOtp = async (email: string, otp: string, token: string) => {
     otp,
     token,
   });
-
   return response.data.data;
 };
 
@@ -58,6 +54,5 @@ export const refreshAccessToken = async () => {
 
 export const logout = async () => {
   const response = await api.put("/api/auth/logout");
-
   return response.data.data;
 };

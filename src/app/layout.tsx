@@ -10,9 +10,9 @@ import AuthLayout from "./layout/auth.layout";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GOOGLE_CLIENT_ID } from "@/lib/env";
 import { Toaster } from "@/components/ui/sonner";
-import GithubAuthRedirect from "./redirects/github-auth.redirect";
 import OtpVerifyPage from "./pages/otp-verify.page";
 import { QueryProvider } from "@/lib/query/query-provider";
+import OAuthRedirect from "./redirects/oauth.redirect";
 
 function App() {
   return (
@@ -23,8 +23,8 @@ function App() {
             <Route path="/auth" element={<AuthLayout />}>
               <Route path="" element={<AuthPage />} />
               <Route
-                path="/auth/callback/github"
-                element={<GithubAuthRedirect />}
+                path="/auth/callback/:provider"
+                element={<OAuthRedirect />}
               />
               <Route path="/auth/otp/verify" element={<OtpVerifyPage />} />
             </Route>

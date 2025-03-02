@@ -13,12 +13,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { isTokenExpired } from "@/lib/jwt";
-import useGoogleOAuthLogin from "@/hooks/use-oauth";
 
 const Sidebar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const { handleGoogleLogout } = useGoogleOAuthLogin();
 
   return (
     <SheetContent className="p-5">
@@ -69,11 +67,7 @@ const Sidebar = () => {
           </>
         ) : (
           <>
-            <Button
-              onClick={handleGoogleLogout}
-              className="mt-5"
-              variant={"destructive"}
-            >
+            <Button className="mt-5" variant={"destructive"}>
               Sign Out
             </Button>
           </>
