@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+.env*
 
 .env
 google.json
@@ -25,3 +26,5 @@ google.json
 *.njsproj
 *.sln
 *.sw?
+
+google.json

@@ -46,6 +46,12 @@
   top: 0;
 }
 
+.login {
+  background-image: url("/assets/vectors/login-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 @layer base {
   :root {
@@ -169,6 +175,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -178,20 +185,22 @@
   0% {
     border-color: transparent;
   }
+
   50% {
-    border-color: blue; 
+    border-color: blue;
   }
+
   100% {
     border-color: transparent;
   }
 }
 
 .newsletter-container {
-  border: 2px solid transparent; 
-  animation: move-border 2.5s infinite; 
+  border: 2px solid transparent;
+  animation: move-border 2.5s infinite;
 }
 
 input:focus {
-  border-color: blue; 
-  outline: none; 
+  border-color: blue;
+  outline: none;
 }
