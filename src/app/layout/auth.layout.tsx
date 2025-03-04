@@ -3,11 +3,6 @@ import { Navigate, Outlet } from "react-router-dom";
 
 const AuthLayout = () => {
   if (!isTokenExpired(localStorage.getItem("dss-accessToken") || "")) {
-    console.log(
-      "TOKEN OKAY?: ",
-      isTokenExpired(localStorage.getItem("dss-accessToken") || "")
-    );
-
     return (
       <>
         <Navigate to="/" />
