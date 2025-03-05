@@ -25,6 +25,34 @@
   top: 0;
 }
 
+.coreteam:before {
+  content: "";
+  background-image: url("/assets/vectors/grid.svg");
+  z-index: -3;
+  height: 100svh;
+  position: absolute;
+  width: 100%;
+  filter: invert(1);
+  top: 0;
+}
+
+.coreteam::after {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.575) 0, #ffffff 100%);
+  position: absolute;
+  content: "";
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.login {
+  background-image: url("/assets/vectors/login-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 @layer base {
   :root {
 
@@ -139,4 +167,40 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes move-border {
+  0% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: blue;
+  }
+
+  100% {
+    border-color: transparent;
+  }
+}
+
+.newsletter-container {
+  border: 2px solid transparent;
+  animation: move-border 2.5s infinite;
+}
+
+input:focus {
+  border-color: blue;
+  outline: none;
 }

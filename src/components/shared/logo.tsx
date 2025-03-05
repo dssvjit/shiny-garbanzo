@@ -7,7 +7,7 @@ interface LogoProps {
   ref?: React.RefObject<HTMLImageElement> | RefObject<HTMLDivElement>;
 }
 
-const logo = ({ withText = false, className, ref }: LogoProps) => {
+const Logo = ({ withText = false, className, ref }: LogoProps) => {
   if (!withText) {
     return (
       <div ref={ref}>
@@ -31,4 +31,4 @@ const logo = ({ withText = false, className, ref }: LogoProps) => {
   );
 };
 
-export default logo;
+export default Logo;

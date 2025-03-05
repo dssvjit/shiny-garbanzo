@@ -7,13 +7,19 @@ import {
 } from "@/components/ui/sheet";
 
 import Logo from "@/components/shared/logo";
-import { Github, Instagram, Linkedin, X } from "lucide-react";
+import { X } from "lucide-react";
 import { NavLists } from "@/lib/lists/nav-lists";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
+import { isTokenExpired } from "@/lib/jwt";
+import { useLogout } from "@/lib/query/mutations/auth.query";
 
 const Sidebar = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const { mutateAsync: logout } = useLogout();
+
   return (
     <SheetContent className="p-5">
       <SheetHeader className="border-b border-neutral-200 pb-4">
@@ -23,7 +29,7 @@ const Sidebar = () => {
             <X />
           </SheetClose>
         </SheetTitle>
-        <SheetDescription className="text-start text-xs px-2">
+        <SheetDescription className="text-start text-md px-2">
           We host workshops, hackathons, and mentorship programs to help
           students grow as developers and innovators.
         </SheetDescription>
@@ -34,9 +40,9 @@ const Sidebar = () => {
         </h3>
         <div className="flex flex-col px-2 text-xl p-1 border-b pb-4 text-neutral-800">
           {NavLists.map((navItem, index) => (
-            <NavLink
+            <a
               key={navItem.route}
-              to={navItem.route}
+              href={navItem.route}
               className={cn(
                 "transition-colors duration-300 tracking-tighter border-t py-2",
                 navItem.route === pathname ? "text-black" : "text-neutral-600",
@@ -44,19 +50,34 @@ const Sidebar = () => {
               )}
             >
               {navItem.name}
-            </NavLink>
+            </a>
           ))}
         </div>
       </div>
       <div className="w-full flex flex-col py-3 gap-2 px-2">
         <h3 className="text-md px-2 font-semibold text-neutral-800 underline">
-          Community
+          Sign In
         </h3>
-        <div className="flex gap-5 px-2 text-xl p-1 border-b pb-4">
-          <Instagram className="text-neutral-700" />
-          <Linkedin className="text-neutral-700" />
-          <Github className="text-neutral-700" />
-        </div>
+        <p className="text-neutral-500 text-md px-2">
+          Sign in to access exclusive content, resources, and opportunities.
+        </p>
+        {isTokenExpired(localStorage.getItem("dss-accessToken") || "") ? (
+          <>
+            <Button onClick={() => navigate("/auth")} className="mt-5">
+              Sign In
+            </Button>
+          </>
+        ) : (
+          <>
+            <Button
+              onClick={async () => await logout()}
+              className="mt-5 text-red-400"
+              variant={"outline"}
+            >
+              Sign Out
+            </Button>
+          </>
+        )}
       </div>
     </SheetContent>
   );

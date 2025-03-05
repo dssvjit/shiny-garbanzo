@@ -4,12 +4,12 @@ export const NavLists = [
     route: "/",
   },
   {
-    name: "About Us",
-    route: "/about",
-  },
-  {
     name: "Events",
     route: "/events",
+  },
+  {
+    name: "About Us",
+    route: "/about",
   },
   {
     name: "Blogs",
