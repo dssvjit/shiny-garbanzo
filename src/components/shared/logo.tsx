@@ -1,31 +1,33 @@
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { RefObject } from "react";
 
 interface LogoProps {
   withText?: boolean;
   className?: string;
-  ref?: React.RefObject<HTMLImageElement>;
+  ref?: React.RefObject<HTMLImageElement> | RefObject<HTMLDivElement>;
 }
 
 const logo = ({ withText = false, className, ref }: LogoProps) => {
   if (!withText) {
     return (
-      <img
-        ref={ref}
-        src="/assets/icons/logo.svg"
-        alt="LOGO"
-        className={cn(className)}
-      />
+      <div ref={ref}>
+        <img
+          src="/assets/icons/logo.svg"
+          alt="LOGO"
+          className={cn(className)}
+        />
+      </div>
     );
   }
 
   return (
-    <img
-      ref={ref ? ref : null}
-      src="/assets/icons/logo-text.svg"
-      alt="LOGO TEXT"
-      className={cn(className)}
-    />
+    <div ref={ref ? ref : null}>
+      <img
+        src="/assets/icons/logo-text.svg"
+        alt="LOGO TEXT"
+        className={cn(className)}
+      />
+    </div>
   );
 };
 

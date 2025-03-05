@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
-import { Ellipsis, ExternalLink, Linkedin, UserRoundCog } from "lucide-react";
+import { Ellipsis, Linkedin, UserRoundCog } from "lucide-react";
 
 import {
   DropdownMenu,
@@ -67,7 +67,7 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
         <div
           ref={ref}
           className={cn(
-            "z-10 w-full flex items-center justify-center rounded-md border bg-white gap-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+            "z-10 w-full flex items-center justify-center rounded-md gap-3 bg-white",
             className
           )}
         >
@@ -85,7 +85,7 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
         <div
           ref={ref}
           className={cn(
-            "z-10 flex items-center justify-center rounded-md border bg-white p-3 sm:p-5 gap-2 sm:gap-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+            "z-10 flex items-center justify-center gap-2 p-3 sm:gap-3 bg-white",
             className
           )}
         >
@@ -100,8 +100,12 @@ const BranchCard = forwardRef<HTMLDivElement, BranchCardProps>(
                 DSS Lead
               </span>
               <div className="flex justify-end items-center -translate-y-1 gap-2">
-                <Linkedin className="h-4 w-4" color="#3f3f3f" />
-                <ExternalLink className="h-4 w-4 " color="#3f3f3f" />
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/yeddanapudispandana/"
+                >
+                  <Linkedin className="h-4 w-4" color="#3f3f3f" />{" "}
+                </a>
               </div>
             </div>
             <h4 className="text-lg sm:text-2xl font-medium tracking-tighter">

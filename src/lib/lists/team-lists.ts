@@ -9,22 +9,6 @@ export const TechTeamList = [
   },
   {
     id: 2,
-    name: "Omer Abdullah",
-    image:
-      "https://i.pinimg.com/736x/a5/75/71/a575716f20bb990883e94407b4c960ea.jpg",
-    year: "II Year",
-    branch: "CSE AIML",
-  },
-  {
-    id: 3,
-    name: "GVH Vardhan Reddy",
-    image:
-      "https://i.pinimg.com/736x/cc/5a/69/cc5a692fd83cffbc9743f779c96d42b8.jpg",
-    year: "III Year",
-    branch: "CSE",
-  },
-  {
-    id: 4,
     name: "G. RishiKesh",
     image:
       "https://i.pinimg.com/736x/59/ff/86/59ff86b496f1ede95a981c087e92d321.jpg",
@@ -32,7 +16,23 @@ export const TechTeamList = [
     branch: "CSE",
   },
   {
-    id: 5,
+    id: 3,
+    name: "Omer Abdullah",
+    image:
+      "https://i.pinimg.com/736x/a5/75/71/a575716f20bb990883e94407b4c960ea.jpg",
+    year: "II Year",
+    branch: "CSE AIML",
+  },
+  {
+    id: 4,
+    name: "GVH Vardhan Reddy",
+    image:
+      "https://i.pinimg.com/736x/cc/5a/69/cc5a692fd83cffbc9743f779c96d42b8.jpg",
+    year: "III Year",
+    branch: "CSE",
+  },
+  {
+    id: 6,
     name: "Dharani",
     image:
       "https://i.pinimg.com/736x/fe/bb/b4/febbb48affcee5f849e478672bd3aa2e.jpg",
@@ -40,7 +40,7 @@ export const TechTeamList = [
     branch: "CSE DS",
   },
   {
-    id: 6,
+    id: 7,
     name: "Sai Srujan",
     image:
       "https://i.pinimg.com/736x/a1/0e/86/a10e8687ecd5d1c1b5accb45434abce0.jpg",
@@ -105,13 +105,13 @@ export const DesignTeamList = [
     id: 1,
     name: "Ujasvi Singh",
     image:
-      "https://i.pinimg.com/736x/b6/48/3a/b6483af217209e580b802de6482953d7.jpg",
+      "https://i.pinimg.com/736x/e9/75/52/e97552a55454ed533e7d46e5b7ab03bb.jpg",
     year: "III Year",
     branch: "CSE",
   },
   {
     id: 2,
-    name: "Ananditha Gangadharpalli",
+    name: "Ananditha G",
     image:
       "https://i.pinimg.com/736x/e5/17/bc/e517bc762137a24a216a524566bf3b28.jpg",
     year: "II Year",
@@ -119,7 +119,7 @@ export const DesignTeamList = [
   },
   {
     id: 3,
-    name: "Hema Sathvika Nadapana",
+    name: "Hema Sathvika",
     image:
       "https://i.pinimg.com/736x/f8/fa/42/f8fa42b12a3ea9386afdf13a415745fb.jpg",
     year: "I Year",
@@ -256,3 +256,34 @@ export const TeamContentList = {
     team: PRORTeamList,
   },
 };
+
+export const CoreTeamList = [
+  {
+    id: 1,
+    name: "Kaushik Katikala",
+    position: "Technical Lead",
+    image: "/assets/images/Technical.jpg",
+    href: "/team/technical",
+  },
+  {
+    id: 2,
+    name: "Harshith Pilli",
+    position: "Non-Technical Lead",
+    image: "/assets/images/Non-Technical.jpg",
+    href: "/team/non-technical",
+  },
+  {
+    id: 3,
+    name: "Abdus Samee",
+    position: "PR-OR Lead",
+    image: "/assets/images/PR-OR.jpg",
+    href: "/team/pr-or",
+  },
+  {
+    id: 4,
+    name: "Hima Bala",
+    position: "Design Lead",
+    image: "/assets/images/Design.jpg",
+    href: "/team/design",
+  },
+];
