@@ -16,7 +16,7 @@ const CoreTeam = () => {
     <div className="w-full flex flex-col items-stretch justify-between gap-10">
       <div className="flex flex-col items-center justify-between gap-4">
         <MemberCard
-          image={"/assets/images/Spandana.jpg"}
+          image={"/assets/images/core/Spandana.jpg"}
           name={"Yeddanapudi Spandana"}
           description={"DSS Lead"}
         />

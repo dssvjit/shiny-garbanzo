@@ -224,7 +224,7 @@ export const TeamContentList = {
     title: "Meet the Visionaries Powering Our Tech",
     description:
       "Our technical team drives the future with expertise, passion, and cutting-edge technology.",
-    leadImage: "/assets/images/Technical.jpg",
+    leadImage: "/assets/images/core/Technical.jpg",
     position: "Technical",
     team: TechTeamList,
   },
@@ -233,7 +233,7 @@ export const TeamContentList = {
     title: "Meet the Creatives Crafting Our Vision",
     description:
       "Our design team brings ideas to life with stunning visuals, intuitive interfaces, and seamless user experiences.",
-    leadImage: "/assets/images/Design.jpg",
+    leadImage: "/assets/images/core/Design.jpg",
     position: "Design",
     team: DesignTeamList,
   },
@@ -242,7 +242,7 @@ export const TeamContentList = {
     title: "Meet the Leaders Steering Our Growth",
     description:
       "They empower the community to achieve greatness through effective management and leadership.",
-    leadImage: "/assets/images/Non-Technical.jpg",
+    leadImage: "/assets/images/core/Non-Technical.jpg",
     position: "Non-Technical",
     team: NonTechTeamList,
   },
@@ -251,7 +251,7 @@ export const TeamContentList = {
     title: "Meet the Voices Amplifying Our Reach",
     description:
       "Our PR-OR team is the voice of DSS, spreading awareness, building connections, and engaging the community. ",
-    leadImage: "/assets/images/PR-OR.jpg",
+    leadImage: "/assets/images/core/PR-OR.jpg",
     position: "PR-OR",
     team: PRORTeamList,
   },
@@ -262,28 +262,28 @@ export const CoreTeamList = [
     id: 1,
     name: "Kaushik Katikala",
     position: "Technical Lead",
-    image: "/assets/images/Technical.jpg",
+    image: "/assets/images/core/Technical.jpg",
     href: "/team/technical",
   },
   {
     id: 2,
     name: "Harshith Pilli",
     position: "Non-Technical Lead",
-    image: "/assets/images/Non-Technical.jpg",
+    image: "/assets/images/core/Non-Technical.jpg",
     href: "/team/non-technical",
   },
   {
     id: 3,
     name: "Abdus Samee",
     position: "PR-OR Lead",
-    image: "/assets/images/PR-OR.jpg",
+    image: "/assets/images/core/PR-OR.jpg",
     href: "/team/pr-or",
   },
   {
     id: 4,
     name: "Hima Bala",
     position: "Design Lead",
-    image: "/assets/images/Design.jpg",
+    image: "/assets/images/core/Design.jpg",
     href: "/team/design",
   },
 ];
