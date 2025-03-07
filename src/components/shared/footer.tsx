@@ -1,139 +1,78 @@
-import { NavLists } from "@/lib/lists/nav-lists";
-import { cn } from "@/lib/utils";
-import { NavLink, useLocation } from "react-router-dom";
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { ArrowUpIcon } from "lucide-react";
+import Logo from "@/components/shared/logo";
+import { SOCIAL_LISTS } from "@/lib/lists/social-lists";
+import EmailForm from "../form/email.form";
+import { FOOTER_LISTS } from "@/lib/lists/footer-lists";
 
 const FooterSection = () => {
-  const { pathname } = useLocation();
-
-const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-
   return (
-    <>
-      {/* Desktop Footer */}
-      <footer className="hidden md:flex w-full relative justify-between items-center py-8 border-t border-t-neutral-300">
-        <div className="flex flex-col justify-center items-start gap-4 ml-2">
-          <img
-            src="/assets/icons/logo-text.svg"
-            alt="LOGO TEXT"
-            className="w-20 md:w-60 mb-2"
-          />
-          <span className="text-xs md:text-[14px] w-4/5 text-neutral-500 text-left">
-            DSS VJIT is more than just a club, it’s a thriving ecosystem where
-            students grow, innovate, and transform into future tech leaders!
-          </span>
-          <div className="flex gap-4">
-            <a href="https://github.com/dssvjit" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/icons/github.png" alt="GitHub" className="w-8 h-8" />
-            </a>
-            <a href="https://www.instagram.com/dss_vjit/" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/icons/instagram.png" alt="Instagram" className="w-8 h-8" />
-            </a>
-            <a href="https://www.linkedin.com/company/dss-vjit/" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/icons/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
-            </a>
-          </div>
-        </div>
-        <div className="flex flex-col items-start gap-3 mr-5">
-          <div className="bg-white-200 rounded-lg p-5 shadow-xl text-center outline outline-1 outline-gray-300 newsletter-container">
-            <p className="text-xl text-black-800">Looking forward to connect with us?</p>
-            <p className="text-sm text-neutral-500">Stay updated with our latest events and news!</p>
-            <form className="flex flex-col items-center mt-4">
-              <Input 
-                type="email" 
-                placeholder="Enter your email for updates" 
-                required 
-                className="mb-2 border-2 border-grey focus:border-blue-500 rounded" 
-              />
-              <Button type="button" className="bg-green-600 text-white rounded">Subscribe</Button>
-            </form>
-          </div>
-          <div className="flex flex-wrap justify-start items-center gap-3 py-5 px-1 mr-3"> {/* Navbar below newsletter */}
-            {NavLists.map((navItem) => (
-              <NavLink
-                key={navItem.route}
-                to={navItem.route}
-                className={cn(
-                  "text-lg text-neutral-600 hover:text-blue-500 transition duration-300", 
-                  navItem.route === pathname
-                    ? "text-neutral-900"
-                    : "text-neutral-600"
-                )}
+    <footer className="w-full flex-col justify-center items-center border-t border-t-neutral-300">
+      <div className="flex w-full items-center justify-between">
+        <div className="flex flex-col w-1/2 justify-start items-start gap-3 p-10">
+          <Logo withText className="w-36" />
+          <p className="text-base tracking-tighter text-neutral-500">
+            Developer Student Society is a community of developers who are
+            passionate about technology and learning. We aim to provide a
+            environment for students to learn, build and grow.
+          </p>
+          <ul className="flex gap-3 w-full">
+            {SOCIAL_LISTS.map((social) => (
+              <li
+                key={social.id}
+                className="border border-neutral-300 p-2 rounded-md flex justify-center items-center"
               >
-                {navItem.name}
-              </NavLink>
+                <a href={social.url} target="_blank" rel="noreferrer">
+                  <social.component className="w-5 h-5" color="5b5b5b" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="flex flex-col w-1/3 justify-start items-end p-10 gap-5">
+          <EmailForm />
+          <div className="flex w-full justify-start items-start gap-10">
+            {FOOTER_LISTS.map((list) => (
+              <div
+                key={list.id}
+                className="flex flex-col justify-center items-start"
+              >
+                <h4 className="text-sm font-semibold text-neutral-600">
+                  {list.title}
+                </h4>
+                <ul className="flex flex-col justify-center items-start">
+                  {list.subMenu.map((sub) => (
+                    <li key={sub.id}>
+                      <a
+                        href={sub.route}
+                        className="text-xs text-neutral-500 hover:text-neutral-600"
+                      >
+                        {sub.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
-      </footer>
-
-      {/* Mobile Footer */}
-      <footer className="md:hidden w-full relative flex flex-col items-center py-8 border-t border-t-neutral-300">
-        <div className="flex flex-col justify-center items-start gap-4 mb-4 px-4">
-          <img
-            src="/assets/icons/logo-text.svg"
-            alt="LOGO TEXT"
-            className="w-20 md:w-60 mb-2"
-          />
-          <span className="text-xs md:text-[14px] w-full text-neutral-500 text-left">
-            DSS VJIT is more than just a club, it’s a thriving ecosystem where
-            students grow, innovate, and transform into future tech leaders!
-          </span>
-        </div>
-        <div className="flex gap-4 mb-4">
-          <a href="https://github.com/dssvjit" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/icons/github.png" alt="GitHub" className="w-8 h-8" />
-          </a>
-          <a href="https://www.instagram.com/dss_vjit/" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/icons/instagram.png" alt="Instagram" className="w-8 h-8" />
-          </a>
-          <a href="https://www.linkedin.com/company/dss-vjit/" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/icons/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
-          </a>
-        </div>
-        <div className="flex flex-col items-start gap-3 mb-4 ml-2 mr-2">
-          <div className="bg-white-200 rounded-lg p-5 shadow-xl text-center outline outline-1 outline-gray-300 newsletter-container">
-            <p className="text-xl text-black-500">Looking forward to connect with us?</p>
-            <p className="text-sm text-neutral-500">Stay updated with our latest events and news!</p>
-            <form className="flex flex-col items-center mt-4">
-            <Input 
-                type="email" 
-                placeholder="Enter your email for updates" 
-                required 
-                className="mb-2 border-2 border-grey focus:border-blue-500 rounded" 
-              />
-              <Button type="button" className="bg-green-600 text-white rounded">Subscribe</Button>
-            </form>
-          </div>
-          <div className="flex flex-wrap justify-start items-center gap-3 py-5 px-1"> 
-            {NavLists.map((navItem) => (
-              <NavLink
-                key={navItem.route}
-                to={navItem.route}
-                className={cn(
-                  "text-lg text-neutral-600 hover:text-blue-500 transition duration-300", 
-                  navItem.route === pathname
-                    ? "text-neutral-900"
-                    : "text-neutral-600"
-                )}
-              >
-                {navItem.name}
-              </NavLink>
-            ))}
-          </div>
-        </div>
-        <button 
-          onClick={scrollToTop} 
-          className="fixed bottom-10 right-10 bg-blue-500 text-white rounded-full p-2 shadow-lg"
+      </div>
+      <div className="flex justify-center items-center py-3 bg-neutral-800 text-white">
+        <p className="text-center text-xs">
+          ©2024-25 Developer Student Society
+        </p>
+        <button
+          className="ml-2"
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
         >
-          ↑
+          <ArrowUpIcon className="w-4 h-4" />
         </button>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 };
 

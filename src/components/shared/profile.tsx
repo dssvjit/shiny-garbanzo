@@ -32,7 +32,7 @@ const Profile = ({ className, imgClassName, isBig = false }: ProfileProps) => {
   }, [getUserDetails]);
 
   if (!userDetails) {
-    return <></>;
+    return <>Please Login Again</>;
   }
 
   if (isBig) {
