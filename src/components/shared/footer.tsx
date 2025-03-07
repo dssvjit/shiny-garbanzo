@@ -11,8 +11,8 @@ const FooterSection = () => {
 
   return (
     <footer className="w-full flex-col justify-center items-center border-t border-t-neutral-300">
-      <div className="flex w-full items-center justify-between">
-        <div className="flex flex-col w-1/2 justify-start items-start gap-3 p-10">
+      <div className="flex flex-col md:flex-row w-full items-center justify-between gap-10 p-10">
+        <div className="flex flex-col w-full md:w-1/2 justify-start items-start gap-3">
           <Logo withText className="w-36" />
           <p className="text-base tracking-tighter text-neutral-500">
             Developer Student Society is a community of developers who are
@@ -32,7 +32,7 @@ const FooterSection = () => {
             ))}
           </ul>
         </div>
-        <div className="flex flex-col w-1/3 justify-start items-end p-10 gap-5">
+        <div className="flex flex-col w-full md:w-1/3 justify-start items-end gap-5">
           <EmailForm />
           <div className="flex w-full justify-start items-start gap-10">
             {FOOTER_LISTS.map((list) => (
