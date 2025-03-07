@@ -8,3 +8,7 @@ export const GITHUB_AUTH_URL = `https://github.com/login/oauth/authorize?client_
 
 export const GOOGLE_AUTH_REDIRECT_URL = `http://localhost:5173/auth/callback/google`;
 export const GOOGLE_AUTH_URL = `https://accounts.google.com/o/oauth2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_AUTH_REDIRECT_URL}&response_type=code&scope=email%20profile%20openid&access_type=offline&prompt=consent`;
+
+export const DSS_INSTAGRAM_URL = "https://www.instagram.com/dss_vjit/";
+export const DSS_LINKEDIN_URL = "https://www.linkedin.com/company/dss-vjit";
+export const DSS_GITHUB_URL = "https://github.com/dssvjit";
