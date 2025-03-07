@@ -2,17 +2,18 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "@/app/pages/home.page";
 import NotFoundPage from "@/app/pages/not-found.page";
 import AboutPage from "@/app/pages/about.page";
-import TeamPage from "./pages/team.page";
-import EventsPage from "./pages/events.page";
-import AuthPage from "./pages/auth.page";
-import AppLayout from "./layout/app.layout";
-import AuthLayout from "./layout/auth.layout";
+import TeamPage from "@/app/pages/team.page";
+import EventsPage from "@/app/pages/events.page";
+import AuthPage from "@/app/pages/auth.page";
+import AppLayout from "@/app/layout/app.layout";
+import AuthLayout from "@/app/layout/auth.layout";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GOOGLE_CLIENT_ID } from "@/lib/env";
 import { Toaster } from "@/components/ui/sonner";
-import OtpVerifyPage from "./pages/otp-verify.page";
+import OtpVerifyPage from "@/app/pages/otp-verify.page";
 import { QueryProvider } from "@/lib/query/query-provider";
-import OAuthRedirect from "./redirects/oauth.redirect";
+import OAuthRedirect from "@/app/redirects/oauth.redirect";
+import EventPage from "@/app/pages/event.page";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/team/:domain" element={<TeamPage />} />
               <Route path="/events" element={<EventsPage />} />
+              <Route path="/event/:name" element={<EventPage />} />
             </Route>
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

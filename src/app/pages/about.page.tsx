@@ -1,5 +1,3 @@
-"use client";
-
 import CoreTeam from "@/components/about/core-team";
 import { useRef } from "react";
 
