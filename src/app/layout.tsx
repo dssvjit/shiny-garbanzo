@@ -14,6 +14,7 @@ import OtpVerifyPage from "@/app/pages/otp-verify.page";
 import { QueryProvider } from "@/lib/query/query-provider";
 import OAuthRedirect from "@/app/redirects/oauth.redirect";
 import EventPage from "@/app/pages/event.page";
+import AdminPage from "@/app/pages/admin.page";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 element={<OAuthRedirect />}
               />
               <Route path="/auth/otp/verify" element={<OtpVerifyPage />} />
+              <Route path="/auth/secret/admin" element={<AdminPage />} />
             </Route>
             <Route path="/" element={<AppLayout />}>
               <Route index element={<HomePage />} />

@@ -4,28 +4,28 @@ export const CarouselEventsLists = [
     description:
       "The DSS Induction at VJIT kicked off an exciting journey for tech enthusiasts! New members explored our vision, core team, and the opportunities ahead.",
     subtitle: "Welcome to the world of endless possibilities!",
-    image: "/assets/images/events/induction.jpg",
+    image: "https://i.imgur.com/KjTLZxh.jpeg",
   },
   {
     title: "Public Profile Building",
     description:
       "We guided students on building a standout tech presence on LinkedIn, GitHub, and portfolios—unlocking visibility, credibility, and career opportunities!",
     subtitle: "Your profile is your brand—let's make it extraordinary!",
-    image: "/assets/images/events/public.jpg",
+    image: "https://i.imgur.com/Xari60t.jpeg",
   },
   {
     title: "VJIT Ideathon 2025",
     description:
       "A 24-hour hackathon where bright minds tackled real-world problems with tech—fueling creativity, innovation, and problem-solving to turn ideas into reality!",
     subtitle: "Innovate. Collaborate. Create.",
-    image: "/assets/images/events/ideathon-2.jpg",
+    image: "https://i.imgur.com/etqkLeu.jpeg",
   },
   {
     title: "Building a Strong Technical Community",
     description:
       "Interactive sessions at VJIT built a strong tech community through talks, workshops, and collaboration—fostering learning, growth, and innovation!",
     subtitle: "Together, we can achieve greatness!",
-    image: "/assets/images/events/public-2.jpg",
+    image: "https://i.imgur.com/abcu1KB.jpeg",
   },
 ];
 
@@ -83,24 +83,5 @@ export const ConductedEventsList = [
     description:
       "Tech lovers, we’ve got something exciting for you!DSS is bringing you the latest tech insights—every single week! From trending technologies to industry news, Info-Drop is your go-to source for all things tech. Stay updated, stay informed, and stay ahead of the curve with Info-Drop!",
     href: "/event/info-drop-decoding-the-tech-industry",
-  },
-];
-
-export const UpcomingEventsList = [
-  {
-    id: 1,
-    image: "https://i.imgur.com/B25qgtf.jpeg",
-    title: "WebSocket Wizardry : Weaving Real-Time Magic",
-    date: "April 2025",
-    description:
-      "A hands-on workshop on WebSocket technology! This session will cover the basics of WebSockets, their applications in real-time communication, and how to implement them in your projects. Attendees will learn how to build interactive web applications, chat systems, and multiplayer games using this powerful technology.",
-  },
-  {
-    id: 2,
-    image: "https://i.imgur.com/kHhyqUM.jpeg",
-    title: "TechTalks : Unraveling Tech Mysteries",
-    date: "TBA 2025",
-    description:
-      "A series of tech talks by industry experts, thought leaders, and tech enthusiasts! TechTalks will cover a wide range of topics, including emerging technologies, career insights, and industry trends. Attendees will gain valuable knowledge, network with industry professionals, and explore the ever-evolving world of technology.",
   },
 ];

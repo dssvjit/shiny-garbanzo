@@ -57,3 +57,16 @@ export const logout = async () => {
   window.location.reload();
   await api.put("/api/auth/logout");
 };
+
+export const adminLogin = async (email: string, password: string) => {
+  const response = await publicApi.post("/api/auth/admin", {
+    email,
+    password,
+  });
+
+  if (response.status !== 200) {
+    return null;
+  }
+
+  return response.data.data;
+};
