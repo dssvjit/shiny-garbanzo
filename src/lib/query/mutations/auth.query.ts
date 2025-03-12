@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import {
+  adminLogin,
   loginWithGithub,
   loginWithGoogle,
   logout,
@@ -35,5 +36,12 @@ export const useVerifyOtp = () => {
 export const useLogout = () => {
   return useMutation({
     mutationFn: () => logout(),
+  });
+};
+
+export const useAdminLogin = () => {
+  return useMutation({
+    mutationFn: (data: { email: string; password: string }) =>
+      adminLogin(data.email, data.password),
   });
 };

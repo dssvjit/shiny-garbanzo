@@ -4,6 +4,8 @@ import { UserDetailsType } from "@/lib/types/user.types";
 import { useEffect, useState } from "react";
 import Spinner from "./spinner";
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface ProfileProps {
   className?: string;
@@ -14,6 +16,7 @@ interface ProfileProps {
 const Profile = ({ className, imgClassName, isBig = false }: ProfileProps) => {
   const [userDetails, setUserDetails] = useState<UserDetailsType | null>(null);
   const { mutateAsync: getUserDetails, isPending } = useGetUserDetails();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("dss-accessToken");
@@ -32,7 +35,11 @@ const Profile = ({ className, imgClassName, isBig = false }: ProfileProps) => {
   }, [getUserDetails]);
 
   if (!userDetails) {
-    return <>Please Login Again</>;
+    return (
+      <>
+        <Button onClick={() => navigate("/auth")}>Login</Button>
+      </>
+    );
   }
 
   if (isBig) {
