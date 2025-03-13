@@ -70,6 +70,6 @@ export const getEventsWithInterestedStatus = async () => {
     return eventsWithInterestStatus as EventType[];
   } catch (err) {
     console.log(err);
-    return null;
+    return [] as EventType[];
   }
 };

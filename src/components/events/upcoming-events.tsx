@@ -25,15 +25,26 @@ const UpcomingEvents = () => {
   const [events, setEvents] = useState<EventType[]>([]);
 
   useEffect(() => {
-    const token = localStorage.getItem("dss-accessToken");
-    if (token) {
-      getEventsWithInterestedStatus().then((data) => {
-        console.log(data);
-        if (data) setEvents(data);
-      });
-    } else {
-      getAllEvents().then((data) => setEvents(data));
-    }
+    const fetchEvents = async () => {
+      try {
+        const token = localStorage.getItem("dss-accessToken");
+        let data: EventType[] = [];
+
+        if (token) {
+          data = await getEventsWithInterestedStatus();
+        } else {
+          data = await getAllEvents();
+        }
+
+        setEvents(data ?? []);
+      } catch (error) {
+        console.error("Failed to fetch events:", error);
+        toast("Failed to load events. Please try again later.");
+        setEvents([]);
+      }
+    };
+
+    fetchEvents();
   }, [getEventsWithInterestedStatus, getAllEvents]);
 
   const handleInterested = async (eventId: string) => {
@@ -47,6 +58,8 @@ const UpcomingEvents = () => {
     }
   };
 
+  console.log("UpcomingEvents", events);
+
   return (
     <div className="flex flex-col justify-center items-center w-full gap-10">
       <div className="flex flex-col justify-center items-center px-5">
@@ -59,51 +72,55 @@ const UpcomingEvents = () => {
       </div>
 
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center px-10 gap-12 md:gap-6">
-        {events.map((event) => (
-          <Card
-            key={event.id}
-            className="flex flex-col w-[350px] md:w-full h-[410px] border-0 shadow-none"
-          >
-            <CardHeader className="p-0">
-              <img
-                src={event.image}
-                alt={event.name}
-                className="w-full h-64 object-cover rounded-md"
-              />
-            </CardHeader>
+        {events && events.length > 0 ? (
+          <>
+            {events.map((event) => (
+              <Card
+                key={event.id}
+                className="flex flex-col w-[350px] md:w-full h-[410px] border-0 shadow-none"
+              >
+                <CardHeader className="p-0">
+                  <img
+                    src={event.image}
+                    alt={event.name}
+                    className="w-full h-64 object-cover rounded-md"
+                  />
+                </CardHeader>
 
-            <CardContent className="w-full flex flex-col justify-center items-start gap-1 mt-5 p-0">
-              <CardTitle className="text-xl tracking-tighter">
-                {event.name}
-              </CardTitle>
-              <CardDescription>{event.date}</CardDescription>
-              <div className="flex justify-between items-center gap-3">
-                <p className="text-sm font-light text-neutral-700 flex-grow">
-                  {event.description.slice(0, 150)}...
-                </p>
+                <CardContent className="w-full flex flex-col justify-center items-start gap-1 mt-5 p-0">
+                  <CardTitle className="text-xl tracking-tighter">
+                    {event.name}
+                  </CardTitle>
+                  <CardDescription>{event.date}</CardDescription>
+                  <div className="flex justify-between items-center gap-3">
+                    <p className="text-sm font-light text-neutral-700 flex-grow">
+                      {event.description.slice(0, 150)}...
+                    </p>
 
-                {localStorage.getItem("dss-accessToken") && (
-                  <>
-                    {event.isInterested ? (
+                    {localStorage.getItem("dss-accessToken") && (
                       <>
-                        <span className="rounded-full px-3 py-2 bg-green-300 text-xs">
-                          Interested
-                        </span>
+                        {event.isInterested ? (
+                          <span className="rounded-full px-3 py-2 bg-green-300 text-xs">
+                            Interested
+                          </span>
+                        ) : (
+                          <Button
+                            onClick={() => handleInterested(event.id)}
+                            className="bg-blue-500 border border-blue-600 hover:bg-blue-600 mt-3 text-xs"
+                          >
+                            I'm Interested
+                          </Button>
+                        )}
                       </>
-                    ) : (
-                      <Button
-                        onClick={() => handleInterested(event.id)}
-                        className="bg-blue-500 border border-blue-600 hover:bg-blue-600 mt-3 text-xs"
-                      >
-                        I'm Interested
-                      </Button>
                     )}
-                  </>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </>
+        ) : (
+          <p className="text-sm text-gray-500">No upcoming events found.</p>
+        )}
 
         {localStorage.getItem("dss-admin-accessToken") && (
           <Card className="flex flex-col w-[350px] md:w-full h-[410px] border shadow-none">
