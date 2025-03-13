@@ -53,9 +53,24 @@ export default {
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
 				}
+			},
+			animation: {
+				'shiny-text': 'shiny-text 8s infinite'
+			},
+			keyframes: {
+				'shiny-text': {
+					'0%, 90%, 100%': {
+						'background-position': 'calc(-100% - var(--shiny-width)) 0'
+					},
+					'30%, 60%': {
+						'background-position': 'calc(100% + var(--shiny-width)) 0'
+					}
+				}
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
-}
-
+	plugins: [
+		require("tailwindcss-animate"),
+		require("@tailwindcss/typography")
+	]
+};

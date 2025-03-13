@@ -1,3 +1,6 @@
+import { cn } from "@/lib/utils";
+import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
+
 const HeroSection = () => {
   return (
     <div className="relative w-full flex flex-col justify-center items-center h-svh px-3 py-24 sm:py-12">
@@ -17,11 +20,19 @@ const HeroSection = () => {
         className="absolute -z-[1] w-full bottom-0 sm:hidden"
       />
 
-      <div className="flex flex-col justify-center items-center gap-3 -translate-y-36 sm:-translate-y-24 md:-translate-y-36 lg:-translate-y-56">
-        <div className="flex justify-center items-center border border-neutral-400 rounded-full p-1 px-3 bg-white shadow-sm">
-          <span className="text-[10px] text-center text-neutral-800">
-            For the Students ✨ By the students
-          </span>
+      <div className="flex flex-col justify-center items-center gap-4 -translate-y-36 sm:-translate-y-24 md:-translate-y-36 lg:-translate-y-56">
+        <div className="flex items-center justify-center">
+          <div
+            className={cn(
+              "group rounded-full border border-neutral-300 bg-neutral-50 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-100 hover:border-neutral-400"
+            )}
+          >
+            <AnimatedShinyText className="inline-flex items-center justify-center px-3 transition ease-out text-neutral-700 hover:text-neutral-900 hover:duration-300">
+              <span className="text-[9px] sm:text-xs">
+                For the Students ✨ By the Students
+              </span>
+            </AnimatedShinyText>
+          </div>
         </div>
 
         <div className="flex flex-col justify-center items-center">
@@ -30,7 +41,7 @@ const HeroSection = () => {
             <br />
             {"Developers".toUpperCase()}
           </h2>
-          <p className="text-md sm:text-lg tracking-tighter font-light text-center text-neutral-600 mt-2">
+          <p className="text-sm sm:text-lg tracking-tighter font-light text-center text-neutral-600 mt-2">
             DSS at VJIT College is a thriving community of developers,
             designers, and tech enthusiasts who collaborate to learn,
             <br />

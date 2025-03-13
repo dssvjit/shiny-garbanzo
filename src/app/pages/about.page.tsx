@@ -1,43 +1,26 @@
-"use client";
-
 import CoreTeam from "@/components/about/core-team";
-import { useRef } from "react";
 
-export function AnimatedBeamDemo() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
+export function AboutPage() {
   return (
-    <div
-      className="relative min-h-svh flex flex-col w-full items-center justify-start pt-32 sm:py-14 gap-10"
-      ref={containerRef}
-    >
-      <img
-        src="/assets/vectors/team-left.svg"
-        alt="SVG LEFT"
-        className="absolute top-60 left-0 w-[300px] lg:w-[500px] hidden md:block"
-      />
-      <img
-        src="/assets/vectors/team-right.svg"
-        alt="SVG RIGHT"
-        className="absolute top-60 right-0 w-[300px] lg:w-[500px] hidden md:block"
-      />
-      <div className="sm:w-4/5 flex flex-col justify-center items-center px-5">
-        <h1 className="text-2xl sm:text-4xl tracking-tighter font-semibold text-center text-neutral-900">
-          {"We are the people who make up the core team of".toUpperCase()}
-          <br />
-          {"Developer Student Society VJIT".toUpperCase()}
-        </h1>
-        <p className="text-center text-xs sm:text-lg text-neutral-700 mt-2 sm:w-4/5 font-light tracking-tighter ">
-          Our philosophy is to create a community of developers who are eager to
-          learn and grow together. We are a group of students who are passionate
-          about technology and are always looking for ways to improve our
-          skills.
-        </p>
+    <div className="flex flex-col w-full items-center justify-center px-5 gap-5 py-5 pt-20 sm:pt-6 sm:py-8 pb-8">
+      <div className="sm:w-4/5 flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
+          <h2 className="text-3xl sm:text-[2.5rem] text-center text-neutral-800 tracking-tighter font-semibold">
+            {"Developers Student Society"}
+            <br />
+          </h2>
+          <p className="text-md sm:text-xl lg:w-5/6 tracking-tighter font-light text-center text-neutral-700 mt-2">
+            Our philosophy is to create a community of developers who are eager
+            to learn and grow together. We are a group of students who are
+            passionate about technology and are always looking for ways to
+            improve our skills.
+          </p>
+        </div>
       </div>
 
-      <CoreTeam containerRef={containerRef} />
+      <CoreTeam />
     </div>
   );
 }
 
-export default AnimatedBeamDemo;
+export default AboutPage;

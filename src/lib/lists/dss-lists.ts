@@ -17,7 +17,7 @@ export const DssLists = [
     id: 3,
     title: "Guided Learning Paths",
     description:
-      "we offer structured learning paths with curated content and mentorship. Topics include Web3, AI/ML, Full-Stack Development, DevOps, and more. Our mentors help guide students at every stage, ensuring they stay on the right track.",
+      "We offer structured learning paths with curated content and mentorship. Topics include Web3, AI/ML, Full-Stack Development, DevOps, and more. Our mentors help guide students at every stage, ensuring they stay on the right track.",
     icon: "/assets/icons/learn.svg",
   },
 ];
