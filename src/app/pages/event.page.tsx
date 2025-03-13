@@ -18,8 +18,6 @@ const EventPage = () => {
     window.scrollTo(0, 0);
   }, [name]);
 
-  console.log("NAME: ", name);
-
   if (
     !name ||
     !Object.values<string>([
@@ -31,7 +29,6 @@ const EventPage = () => {
       "info-drop-decoding-the-tech-industry",
     ]).includes(name)
   ) {
-    console.log("NO NAME");
     return <Navigate to={"/events"} />;
   }
 

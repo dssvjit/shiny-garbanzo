@@ -18,8 +18,6 @@ function EventCarousel() {
     return () => clearInterval(timer);
   }, []);
 
-  console.log("CarouselEventsLists", CarouselEventsLists);
-
   return (
     <div className="relative w-full">
       <Carousel index={index} onIndexChange={setIndex} className="w-full">

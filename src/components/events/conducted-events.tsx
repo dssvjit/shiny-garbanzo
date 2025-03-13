@@ -11,8 +11,6 @@ import { useNavigate } from "react-router-dom";
 const ConductedEvents = () => {
   const navigate = useNavigate();
 
-  console.log("ConductedEventsList", ConductedEventsList);
-
   return (
     <div className="flex flex-col justify-center items-center w-full gap-10">
       <div className="flex flex-col justify-center items-center px-5">

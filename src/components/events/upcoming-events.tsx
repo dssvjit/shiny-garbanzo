@@ -58,8 +58,6 @@ const UpcomingEvents = () => {
     }
   };
 
-  console.log("UpcomingEvents", events);
-
   return (
     <div className="flex flex-col justify-center items-center w-full gap-10">
       <div className="flex flex-col justify-center items-center px-5">
