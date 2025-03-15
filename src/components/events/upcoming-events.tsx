@@ -59,7 +59,7 @@ const UpcomingEvents = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full gap-10">
+    <div className="flex flex-col justify-center items-center w-full gap-10 mb-16 sm:mb-0">
       <div className="flex flex-col justify-center items-center px-5">
         <h1 className="text-2xl md:text-4xl tracking-tighter font-semibold">
           OUR UPCOMING EVENTS
