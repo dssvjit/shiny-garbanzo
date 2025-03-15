@@ -4,19 +4,22 @@ import { UserDetailsType } from "@/lib/types/user.types";
 import { useEffect, useState } from "react";
 import Spinner from "./spinner";
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
-import { useNavigate } from "react-router-dom";
 
 interface ProfileProps {
   className?: string;
   imgClassName?: string;
+  contentClassName?: string;
   isBig?: boolean;
 }
 
-const Profile = ({ className, imgClassName, isBig = false }: ProfileProps) => {
+const Profile = ({
+  className,
+  imgClassName,
+  contentClassName,
+  isBig = false,
+}: ProfileProps) => {
   const [userDetails, setUserDetails] = useState<UserDetailsType | null>(null);
   const { mutateAsync: getUserDetails, isPending } = useGetUserDetails();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("dss-accessToken");
@@ -35,11 +38,7 @@ const Profile = ({ className, imgClassName, isBig = false }: ProfileProps) => {
   }, [getUserDetails]);
 
   if (!userDetails) {
-    return (
-      <>
-        <Button onClick={() => navigate("/auth")}>Login</Button>
-      </>
-    );
+    return null;
   }
 
   if (isBig) {
@@ -72,17 +71,25 @@ const Profile = ({ className, imgClassName, isBig = false }: ProfileProps) => {
           </>
         ) : (
           <>
-            <div className="flex flex-col items-center gap-4 p-6">
-              <div
-                className={cn("hidden md:flex items-center gap-4", className)}
-              >
+            <div
+              className={cn(
+                "hidden md:flex flex-col items-center gap-4 p-6",
+                className
+              )}
+            >
+              <div className="flex items-center gap-4">
                 <img
                   src={userDetails.imageUrl}
                   alt={userDetails.name}
                   className={cn("w-10 h-10 rounded-full", imgClassName)}
                 />
               </div>
-              <div className="flex flex-col justify-center items-center">
+              <div
+                className={cn(
+                  "flex flex-col justify-center items-center",
+                  contentClassName
+                )}
+              >
                 <span className="text-lg text-neutral-900 font-semibold ">
                   {userDetails.name}
                 </span>

@@ -57,7 +57,6 @@ const Navbar = () => {
 
           <Sheet>
             <SheetTrigger className="cursor-pointer md:hidden">
-              {}
               <AlignJustify className="h-7 w-7 text-neutral-600" />
             </SheetTrigger>
             <Sidebar />
@@ -66,7 +65,7 @@ const Navbar = () => {
       ) : (
         <>
           <DropdownMenu>
-            <DropdownMenuTrigger>
+            <DropdownMenuTrigger className="hidden md:flex">
               <Profile />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="mr-7">
