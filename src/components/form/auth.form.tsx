@@ -104,7 +104,12 @@ const AuthForm = () => {
             Login with Github
           </Button>
 
-          <Button type="submit" variant={"link"} className="w-full">
+          <Button
+            onClick={() => navigate("/")}
+            type="submit"
+            variant={"link"}
+            className="w-full"
+          >
             Continue without login
           </Button>
         </div>
