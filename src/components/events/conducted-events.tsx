@@ -43,7 +43,7 @@ const ConductedEvents = () => {
                 {event.title}
               </CardTitle>
               <CardDescription>{event.date}</CardDescription>
-              <p className="w-full text-sm font-light text-neutral-700">
+              <p className="w-full text-sm md:text-xs xl:text-sm font-light text-neutral-700">
                 {event.description.slice(0, 150)}...
               </p>
             </CardContent>

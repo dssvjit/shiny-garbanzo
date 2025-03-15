@@ -1,5 +1,6 @@
 import { TeamContentList } from "@/lib/lists/team-lists";
 import MemberCard from "./member-card";
+import { Instagram, Linkedin } from "lucide-react";
 
 type MembersPropsType = {
   domain: "technical" | "design" | "non-technical" | "pr-or";
@@ -33,14 +34,37 @@ function Members({ domain }: MembersPropsType) {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-wrap justify-center items-center gap-3 mt-6">
+      <div className="w-full flex flex-wrap justify-center items-center gap-3 gap-y-5 mt-6">
         {TeamContentList[domain].team.map((member) => (
-          <MemberCard
-            id={member.id}
-            image={member.image}
-            name={member.name}
-            description={`${member.branch} ${member.year}`}
-          />
+          <>
+            <div className="flex flex-col justify-center items-center">
+              <MemberCard
+                id={member.id}
+                image={member.image}
+                name={member.name}
+                description={`${member.branch} ${member.year}`}
+              />
+              <div className="flex justify-center items-center gap-3 my-1">
+                <a
+                  href={
+                    member.linkedin ||
+                    "https://www.linkedin.com/company/dss-vjit/posts/?feedView=all"
+                  }
+                  target="_blank"
+                >
+                  <Linkedin className="size-5 cursor-pointer hover:border-b hover:border-neutral-800" />
+                </a>
+                <a
+                  href={
+                    member.instagram || "https://www.instagram.com/dss_vjit/"
+                  }
+                  target="_blank"
+                >
+                  <Instagram className="size-5 cursor-pointer hover:border-b hover:border-neutral-800" />
+                </a>
+              </div>
+            </div>
+          </>
         ))}
       </div>
     </div>

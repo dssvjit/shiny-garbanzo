@@ -5,6 +5,8 @@ export const TechTeamList = [
     image: "https://i.imgur.com/B4bRirZ.jpeg",
     year: "II Year",
     branch: "CSE AIML",
+    linkedin: "www.linkedin.com/in/saianeeshg90",
+    instagram: "https://www.instagram.com/teabagme0/",
   },
   {
     id: 2,
@@ -12,6 +14,7 @@ export const TechTeamList = [
     image: "https://i.imgur.com/W9SpEjM.jpeg",
     year: "III Year",
     branch: "CSE",
+    linkedin: "https://www.linkedin.com/in/rishikesh-gunda-051bb9255",
   },
   {
     id: 3,
@@ -19,6 +22,9 @@ export const TechTeamList = [
     image: "https://i.imgur.com/VeMoGpR.jpeg",
     year: "III Year",
     branch: "CSE",
+    linkedin:
+      "https://www.linkedin.com/in/gurrampati-venkat-harsha-vardhan-reddy-59b88b259",
+    instagram: "https://www.instagram.com/gvhvardhan",
   },
   {
     id: 4,
@@ -26,6 +32,8 @@ export const TechTeamList = [
     image: "https://i.imgur.com/x1QPfAB.jpeg",
     year: "II Year",
     branch: "CSE AIML",
+    linkedin: "https://www.linkedin.com/in/0m3r",
+    instagram: "https://www.instagram.com/0m3r.exe",
   },
 
   {
@@ -34,6 +42,8 @@ export const TechTeamList = [
     image: "https://i.imgur.com/CwBzSpX.jpeg",
     year: "III Year",
     branch: "CSE DS",
+    linkedin: "https://www.linkedin.com/in/dharani-lakkireddy",
+    instagram: "https://www.instagram.com/dharani_3087/",
   },
   {
     id: 6,
@@ -41,6 +51,18 @@ export const TechTeamList = [
     image: "https://i.imgur.com/hlnCli5.jpeg",
     year: "I Year",
     branch: "IT",
+    linkedin: "https://www.linkedin.com/in/saisrujanpunati",
+    instagram:
+      "https://www.instagram.com/__saisrujan__?igsh=MXhldmZkNnFpbGs0cw==",
+  },
+  {
+    id: 7,
+    name: "Jonnada Mahesh",
+    image: "https://i.imgur.com/0IBUXWs.jpeg",
+    year: "II Year",
+    branch: "CSE DS",
+    linkedin: "https://www.linkedin.com/in/jonnada-mahesh-a72b0328a",
+    instagram: "https://www.instagram.com/jonnada_mahesh_/",
   },
 ];
 
@@ -51,6 +73,7 @@ export const PRORTeamList = [
     image: "https://i.imgur.com/P24q368.jpeg",
     year: "I Year",
     branch: "CSE",
+    instagram: "https://www.instagram.com/yuvies.45/",
   },
   {
     id: 2,
@@ -58,6 +81,8 @@ export const PRORTeamList = [
     image: "https://i.imgur.com/vkvorQg.jpeg",
     year: "III Year",
     branch: "CSE",
+    linkedin: "https://www.linkedin.com/in/prashanth-goud-7b8864294",
+    instagram: "https://www.instagram.com/prashanthh.006",
   },
   {
     id: 3,
@@ -65,13 +90,17 @@ export const PRORTeamList = [
     image: "https://i.imgur.com/QlZgpZh.jpeg",
     year: "III Year",
     branch: "CSE",
+    linkedin: "https://www.linkedin.com/in/samiksha-salunke-6b0b66259/",
+    instagram: "https://www.instagram.com/_samiksha.146/",
   },
   {
     id: 4,
-    name: "Sannobar Unissa",
+    name: "Sanobar Unissa",
     image: "https://i.imgur.com/T64j6Z3.jpeg",
     year: "II Year",
     branch: "CSE DS",
+    linkedin: "https://www.linkedin.com/in/sanobar-unissa-71a0092a6/",
+    instagram: "https://www.instagram.com/sanobar_unissa/",
   },
   {
     id: 5,
@@ -79,6 +108,8 @@ export const PRORTeamList = [
     image: "https://i.imgur.com/Vjlx0Eg.jpeg",
     year: "I Year",
     branch: "IT",
+    linkedin: "https://www.linkedin.com/in/athikah-azeem-2287b2328",
+    instagram: "https://www.instagram.com/athikah_aa/",
   },
   {
     id: 6,
@@ -86,6 +117,18 @@ export const PRORTeamList = [
     image: "https://i.imgur.com/8sXLb2c.jpeg",
     year: "I Year",
     branch: "CSE",
+    linkedin: "https://www.linkedin.com/in/saathwika-doma-a97a90313",
+    instagram:
+      "https://www.instagram.com/siri_saathwika?igsh=MWhhdTR3ejJseHZzNw",
+  },
+  {
+    id: 7,
+    name: "P. Naga Bhavagnya",
+    image: "https://i.imgur.com/aRVyCXT.png",
+    year: "II Year",
+    branch: "IT",
+    linkedin: "https://www.linkedin.com/in/bhavagnya-p-384858297",
+    instagram: "https://www.instagram.com/bhavi1_7/",
   },
 ];
 
@@ -96,6 +139,8 @@ export const DesignTeamList = [
     image: "https://i.imgur.com/jfavbTG.jpeg",
     year: "III Year",
     branch: "CSE",
+    linkedin: "https://www.linkedin.com/in/thakur-ujasvi-singh-19811a25a",
+    instagram: "https://www.instagram.com/ujasvi.thakur/",
   },
   {
     id: 2,
@@ -103,6 +148,8 @@ export const DesignTeamList = [
     image: "https://i.imgur.com/MnJbBY4.png",
     year: "II Year",
     branch: "CSE DS",
+    linkedin: "https://www.linkedin.com/in/ananditha-gangadharpalli-7666a6296",
+    instagram: "https://www.instagram.com/anandi._tha/",
   },
   {
     id: 3,
@@ -110,6 +157,8 @@ export const DesignTeamList = [
     image: "https://i.imgur.com/1wu35Vr.jpeg",
     year: "I Year",
     branch: "CSE AIML",
+    linkedin: "https://www.linkedin.com/in/nadapana-hema-sathvika-9b76a0300",
+    instagram: "https://www.instagram.com/seekingserenity_ss",
   },
   {
     id: 4,
@@ -117,6 +166,8 @@ export const DesignTeamList = [
     image: "https://i.imgur.com/xjJ0711.jpeg",
     year: "II Year",
     branch: "AI",
+    linkedin: "https://www.linkedin.com/in/jagruthi-gadila-1065a82b8/",
+    instagram: "https://www.instagram.com/jagruthii_reddy_/",
   },
 ];
 
@@ -127,6 +178,7 @@ export const NonTechTeamList = [
     image: "https://i.imgur.com/4IuQHs4.jpeg",
     year: "II Year",
     branch: "ECE",
+    instagram: "https://www.instagram.com/koustubh_joshi_1729/",
   },
   {
     id: 2,
@@ -134,6 +186,8 @@ export const NonTechTeamList = [
     image: "https://i.imgur.com/2Ec17yi.jpeg",
     year: "III Year",
     branch: "CSE",
+    linkedin: "https://www.linkedin.com/in/saira-khan-6a7b66259/",
+    instagram: "https://www.instagram.com/sairak25011/",
   },
   {
     id: 3,
@@ -141,6 +195,8 @@ export const NonTechTeamList = [
     image: "https://i.imgur.com/gA9EosH.jpeg",
     year: "III Year",
     branch: "CSE AIML",
+    linkedin: "https://www.linkedin.com/in/john-abraham-charlapally",
+    instagram: "https://www.instagram.com/thefantabulous7/",
   },
   {
     id: 4,
@@ -148,6 +204,9 @@ export const NonTechTeamList = [
     image: "https://i.imgur.com/RNQllHw.jpeg",
     year: "II Year",
     branch: "CSE DS",
+    linkedin: "https://www.linkedin.com/in/kodur-sidheshwar-8255b42b8",
+    instagram:
+      "https://www.instagram.com/sidheshwar0205?igsh=MXA4dWE3c2h2bGN5bw==",
   },
   {
     id: 5,
@@ -155,6 +214,8 @@ export const NonTechTeamList = [
     image: "https://i.imgur.com/ituBDxN.jpeg",
     year: "II Year",
     branch: "CSE DS",
+    linkedin: "https://www.linkedin.com/in/ailavishnuvardhan/",
+    instagram: "https://www.instagram.com/vishnuuu_._/",
   },
   {
     id: 6,
@@ -162,34 +223,53 @@ export const NonTechTeamList = [
     image: "https://i.imgur.com/XwnEfSX.jpeg",
     year: "II Year",
     branch: "CSE DS",
+    linkedin: "https://www.linkedin.com/in/suchismita-jena-36089a28b/",
+    instagram: "https://www.instagram.com/suchiz__/",
   },
   {
     id: 7,
-    name: "Saiteja Veerabomma",
-    image: "https://i.imgur.com/XdzQ3Jb.jpeg",
-    year: "II Year",
-    branch: "CSE DS",
-  },
-  {
-    id: 8,
     name: "Kevin Jonathan",
     image: "https://i.imgur.com/k9AHOVi.jpeg",
     year: "III Year",
     branch: "CSE",
+    linkedin: "https://www.linkedin.com/in/kevin-jonathan-433a75259/",
+    instagram: "https://www.instagram.com/kevinjonathan07/",
+  },
+  {
+    id: 8,
+    name: "Prashanth Pendem",
+    image: "https://i.imgur.com/TgQTCDR.png",
+    year: "II Year",
+    branch: "CSE",
+    instagram: "https://www.instagram.com/prashanth_pendem_49/",
+    linkedin: "https://www.linkedin.com/in/pendem-prashanth-223aab2b9/",
   },
   {
     id: 9,
-    name: "V Preeti",
-    image: "https://i.imgur.com/7YX8WGF.jpeg",
-    year: "II Year",
-    branch: "AI",
-  },
-  {
-    id: 10,
     name: "Vedant Idlgave",
     image: "https://i.imgur.com/NxqYNwS.jpeg",
     year: "I Year",
     branch: "CSE DS",
+    linkedin: "https://www.linkedin.com/in/vedant-idlgave-70040b331/",
+    instagram: "https://www.instagram.com/vedant_15_200/",
+  },
+  {
+    id: 10,
+    name: "V Preeti",
+    image: "https://i.imgur.com/7YX8WGF.jpeg",
+    year: "II Year",
+    branch: "AI",
+    linkedin: "https://www.linkedin.com/in/preethi-varri-163028322/",
+    instagram: "https://www.instagram.com/preethi__1223/",
+  },
+  {
+    id: 11,
+    name: "Saiteja Veerabomma",
+    image: "https://i.imgur.com/XdzQ3Jb.jpeg",
+    year: "II Year",
+    branch: "CSE DS",
+    linkedin: "https://www.linkedin.com/in/saiteja-veerabomma-0805b22b8",
+    instagram: "https://www.instagram.com/_vsaiteja_/",
   },
 ];
 
@@ -239,6 +319,8 @@ export const CoreTeamList = [
     position: "Technical Lead",
     image: "https://i.imgur.com/gYlmaqt.png",
     href: "/team/technical",
+    linkedin: "https://www.linkedin.com/in/kaushik-katikala/",
+    instagram: "https://www.instagram.com/_kaushik_1706/",
   },
   {
     id: 2,
@@ -246,6 +328,8 @@ export const CoreTeamList = [
     position: "Non-Technical Lead",
     image: "https://i.imgur.com/3umE9SL.jpeg",
     href: "/team/non-technical",
+    linkedin: "https://www.linkedin.com/in/harshith-pilli-73012125a/",
+    instagram: "https://www.instagram.com/harshithpilli.02/",
   },
   {
     id: 3,
@@ -253,6 +337,8 @@ export const CoreTeamList = [
     position: "PR-OR Lead",
     image: "https://i.imgur.com/wBfegLG.jpeg",
     href: "/team/pr-or",
+    linkedin: "https://www.linkedin.com/in/shaik-mohammed-abdus-samee/",
+    instagram: "https://www.instagram.com/abdus_samee_007/",
   },
   {
     id: 4,
@@ -260,5 +346,7 @@ export const CoreTeamList = [
     position: "Design Lead",
     image: "https://i.imgur.com/WULnIKF.jpeg",
     href: "/team/design",
+    linkedin: "https://www.linkedin.com/in/himabala-bandaru-176508281/",
+    instagram: "https://www.instagram.com/himabala_/",
   },
 ];

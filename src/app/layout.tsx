@@ -15,6 +15,7 @@ import { QueryProvider } from "@/lib/query/query-provider";
 import OAuthRedirect from "@/app/redirects/oauth.redirect";
 import EventPage from "@/app/pages/event.page";
 import AdminPage from "@/app/pages/admin.page";
+import ProgressPage from "./pages/progress.page";
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
               <Route path="/team/:domain" element={<TeamPage />} />
               <Route path="/events" element={<EventsPage />} />
               <Route path="/event/:name" element={<EventPage />} />
+              <Route path="/blogs" element={<ProgressPage />} />
+              <Route path="/contact" element={<ProgressPage />} />
             </Route>
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
