@@ -49,13 +49,13 @@ const Sidebar = () => {
         <h3 className="text-md px-2 font-semibold text-neutral-800 underline">
           Menu
         </h3>
-        <div className="flex flex-col px-2 text-xl p-1 border-b pb-4 text-neutral-800">
+        <div className="flex flex-col px-2 text-lg p-1 border-b pb-4 text-neutral-800">
           {NavLists.map((navItem, index) => (
             <a
               key={navItem.route}
               href={navItem.route}
               className={cn(
-                "transition-colors duration-300 tracking-tighter border-t py-2",
+                "transition-colors duration-300 tracking-tighter pt-1",
                 navItem.route === pathname ? "text-black" : "text-neutral-600",
                 index === 0 ? "border-transparent" : "border-neutral-200"
               )}

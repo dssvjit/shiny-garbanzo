@@ -26,7 +26,7 @@ const EventMarkdown = ({ markdown, cover }: EventMarkdownProps) => {
           <img
             src={cover}
             alt="okay"
-            className="w-full h-40 md:h-80  object-cover rounded-md border border-neutral-400"
+            className="w-full h-40 md:h-80  object-cover rounded-md border border-neutral-200"
           />
         </div>
         <div className="prose max-w-none w-full md:w-3/5 my-7 px-5 font-poppins">

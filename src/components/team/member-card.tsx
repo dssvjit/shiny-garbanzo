@@ -7,6 +7,7 @@ interface MemberCardProps {
   description: string;
   ref?: React.RefObject<HTMLDivElement>;
   className?: string;
+  textColor?: string;
 }
 
 function MemberCard({
@@ -16,6 +17,7 @@ function MemberCard({
   description,
   ref,
   className,
+  textColor = "text-neutral-700",
 }: MemberCardProps) {
   return (
     <div
@@ -24,10 +26,12 @@ function MemberCard({
       className={cn("flex flex-col justify-center items-center", className)}
     >
       <img src={image} alt={name} className="w-40 h-40 rounded-md" />
-      <h5 className="text-xl md:text-lg text-neutral-700 tracking-tighter font-semibold mt-1">
+      <h5 className="text-xl md:text-xl text-neutral-700 tracking-tighter font-semibold mt-1">
         {name}
       </h5>
-      <span className="text-xs md:text-md text-neutral-700 tracking-tighter font-light">
+      <span
+        className={`text-md md:text-md ${textColor} tracking-tighter font-light`}
+      >
         {description}
       </span>
     </div>
