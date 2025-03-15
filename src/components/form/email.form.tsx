@@ -12,8 +12,13 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useAddEmail } from "@/lib/query/mutations/email.query";
+import { toast } from "sonner";
+import Spinner from "../shared/spinner";
 
 function EmailForm() {
+  const { mutateAsync: addEmail, isPending } = useAddEmail();
+
   const form = useForm<z.infer<typeof mailSchema>>({
     resolver: zodResolver(mailSchema),
     defaultValues: {
@@ -21,8 +26,25 @@ function EmailForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof mailSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof mailSchema>) {
+    try {
+      const response = await addEmail(values.email);
+      if (response.status === 203) {
+        toast("You've already submitted email once. Thank you!");
+        return;
+      } else if (response.status === 201) {
+        toast("Thank you for subscribing!");
+        return;
+      } else {
+        toast("Something went wrong");
+        return;
+      }
+    } catch (error) {
+      console.error(error);
+      toast("Something went wrong, please try again later");
+    } finally {
+      form.reset();
+    }
   }
 
   return (
@@ -53,7 +75,13 @@ function EmailForm() {
             type="submit"
             className="w-1/3 bg-blue-500 hover:bg-blue-600 border border-blue-600"
           >
-            Submit
+            {isPending ? (
+              <>
+                <Spinner />
+              </>
+            ) : (
+              "Submit"
+            )}
           </Button>
         </div>
         <span className="text-sm text-neutral-500 w-3/4">
