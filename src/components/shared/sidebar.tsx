@@ -103,7 +103,7 @@ const Sidebar = () => {
                     Sign Out
                   </Button>
                 </AlertDialogTrigger>
-                <AlertDialogContent className="max-w-sm rounded-md">
+                <AlertDialogContent className="max-w-xs rounded-md">
                   <AlertDialogTitle>
                     Are you sure you want to sign out?
                   </AlertDialogTitle>

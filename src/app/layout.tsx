@@ -35,7 +35,7 @@ function App() {
             <Route path="/" element={<AppLayout />}>
               <Route index element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/team/:domain" element={<TeamPage />} />
+              <Route path="/about/:domain" element={<TeamPage />} />
               <Route path="/events" element={<EventsPage />} />
               <Route path="/event/:name" element={<EventPage />} />
               <Route path="/blogs" element={<ProgressPage />} />

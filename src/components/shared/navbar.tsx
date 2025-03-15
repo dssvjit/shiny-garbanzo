@@ -18,6 +18,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useLogout } from "@/lib/query/mutations/auth.query";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "../ui/alert-dialog";
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -75,13 +84,31 @@ const Navbar = () => {
               <DropdownMenuSeparator />
               <Profile imgClassName="w-20 h-20" isBig />
               <DropdownMenuSeparator />
-              <Button
-                onClick={async () => await logout()}
-                variant={"link"}
-                className="w-full text-red-500"
-              >
-                Log out
-              </Button>
+              <AlertDialog>
+                <AlertDialogTrigger className="text-red-400 p-1 w-full text-sm hover:underline">
+                  Sign Out
+                </AlertDialogTrigger>
+                <AlertDialogContent className="max-w-xs sm:max-w-lg rounded-md">
+                  <AlertDialogTitle>
+                    Are you sure you want to sign out?
+                  </AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Signing out will log you out of all devices and you will
+                    need to sign in again to access your account
+                  </AlertDialogDescription>
+                  <div className="flex justify-start items-center gap-3">
+                    <AlertDialogAction
+                      onClick={async () => await logout()}
+                      className="h-10 px-6"
+                    >
+                      Yes
+                    </AlertDialogAction>
+                    <AlertDialogCancel className="h-10 px-8">
+                      No
+                    </AlertDialogCancel>
+                  </div>
+                </AlertDialogContent>
+              </AlertDialog>
             </DropdownMenuContent>
           </DropdownMenu>
 
