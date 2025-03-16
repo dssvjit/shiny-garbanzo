@@ -18,11 +18,11 @@ const TeamPage = () => {
   }
 
   return (
-    <section className="flex flex-col justify-center items-center px-5 gap-2 py-14 pt-20 sm:pt-12">
+    <section className="relative flex flex-col justify-center items-center px-5 gap-2 py-14 pt-20 sm:pt-10">
       <Button
         variant={"link"}
         onClick={() => window.history.back()}
-        className="self-start"
+        className="absolute top-0 left-0 mt-2 ml-2"
       >
         <ChevronLeft />
         Back
