@@ -91,7 +91,7 @@ export const UpcomgingEventsList = [
     id: 1,
     image: "https://i.imgur.com/B25qgtf.jpg",
     name: "Websocket Wizardry : Weaving Real-Time Magic",
-    date: "25th May 2025",
+    date: "March-April 2025",
     description:
       "Join us for an exciting workshop on WebSockets and real-time communication! Learn how to build interactive web applications, chat systems, and live data streams using WebSockets. From understanding the basics to implementing real-time features, this workshop will take your web development skills to the next level!",
   },
