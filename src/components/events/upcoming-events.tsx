@@ -15,6 +15,7 @@ import {
 } from "@/lib/query/mutations/event.query";
 import { EventType } from "@/lib/types/event.types";
 import { toast } from "sonner";
+import { UpcomgingEventsList } from "@/lib/lists/events-lists";
 
 const UpcomingEvents = () => {
   const { mutateAsync: getEventsWithInterestedStatus } =
@@ -117,7 +118,34 @@ const UpcomingEvents = () => {
             ))}
           </>
         ) : (
-          <p className="text-sm text-gray-500">No upcoming events found.</p>
+          <>
+            {UpcomgingEventsList.map((event) => (
+              <Card
+                key={event.id}
+                className="flex flex-col w-[350px] md:w-full h-[410px] border-0 shadow-none"
+              >
+                <CardHeader className="p-0">
+                  <img
+                    src={event.image}
+                    alt={event.name}
+                    className="w-full h-64 object-cover rounded-md"
+                  />
+                </CardHeader>
+
+                <CardContent className="w-full flex flex-col justify-center items-start gap-1 mt-5 p-0">
+                  <CardTitle className="text-xl tracking-tighter">
+                    {event.name}
+                  </CardTitle>
+                  <CardDescription>{event.date}</CardDescription>
+                  <div className="flex justify-between items-center gap-3">
+                    <p className="text-sm font-light text-neutral-700 flex-grow">
+                      {event.description.slice(0, 150)}...
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </>
         )}
 
         {localStorage.getItem("dss-admin-accessToken") && (
